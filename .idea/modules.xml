@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/OjbK_EC.iml" filepath="$PROJECT_DIR$/OjbK_EC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ojkb-annotations/ojkb-annotations.iml" filepath="$PROJECT_DIR$/ojkb-annotations/ojkb-annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ojkb-compiler/ojkb-compiler.iml" filepath="$PROJECT_DIR$/ojkb-compiler/ojkb-compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okjb-core/okjb-core.iml" filepath="$PROJECT_DIR$/okjb-core/okjb-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/okjb-ec/okjb-ec.iml" filepath="$PROJECT_DIR$/okjb-ec/okjb-ec.iml" />
+    </modules>
+  </component>
+</project>
