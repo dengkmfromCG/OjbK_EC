@@ -1,13 +1,15 @@
 package com.gdut.dkmfromcg.ojbk_ec;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import com.gdut.dkmfromcg.ojbk_ec.fragments.ExampleFragment;
+import com.gdut.dkmfromcg.ojkb.activities.ProxyActivity;
+import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ProxyActivity {
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public ProxyFragment setRootFragment() {
+        return new ExampleFragment();
     }
+
 }

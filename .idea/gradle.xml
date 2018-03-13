@@ -9,10 +9,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/example" />
-            <option value="$PROJECT_DIR$/ojkb-annotations" />
-            <option value="$PROJECT_DIR$/ojkb-compiler" />
-            <option value="$PROJECT_DIR$/okjb-core" />
-            <option value="$PROJECT_DIR$/okjb-ec" />
+            <option value="$PROJECT_DIR$/ojbk-annotations" />
+            <option value="$PROJECT_DIR$/ojbk-compiler" />
+            <option value="$PROJECT_DIR$/ojbk-core" />
+            <option value="$PROJECT_DIR$/ojbk-ec" />
+            <option value="$PROJECT_DIR$/ojbk-ui" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

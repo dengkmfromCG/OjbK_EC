@@ -4,10 +4,15 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OjbK_EC.iml" filepath="$PROJECT_DIR$/OjbK_EC.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ojkb-annotations/ojkb-annotations.iml" filepath="$PROJECT_DIR$/ojkb-annotations/ojkb-annotations.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ojkb-compiler/ojkb-compiler.iml" filepath="$PROJECT_DIR$/ojkb-compiler/ojkb-compiler.iml" />
-      <module fileurl="file://$PROJECT_DIR$/okjb-core/okjb-core.iml" filepath="$PROJECT_DIR$/okjb-core/okjb-core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/okjb-ec/okjb-ec.iml" filepath="$PROJECT_DIR$/okjb-ec/okjb-ec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ojbk-annotations/ojbk-annotations.iml" filepath="$PROJECT_DIR$/ojbk-annotations/ojbk-annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ojbk-compiler/ojbk-compiler.iml" filepath="$PROJECT_DIR$/ojbk-compiler/ojbk-compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ojbk-core/ojbk-core.iml" filepath="$PROJECT_DIR$/ojbk-core/ojbk-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ojbk-ec/ojbk-ec.iml" filepath="$PROJECT_DIR$/ojbk-ec/ojbk-ec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ojbk-ui/ojbk-ui.iml" filepath="$PROJECT_DIR$/ojbk-ui/ojbk-ui.iml" />
+      <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\ojbk-annotations\ojkb-annotations.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\ojbk-annotations\ojkb-annotations.iml" />
+      <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\ojbk-compiler\ojkb-compiler.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\ojbk-compiler\ojkb-compiler.iml" />
+      <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\ojbk-core\okjb-core.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\ojbk-core\okjb-core.iml" />
+      <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\ojbk-ec\okjb-ec.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\ojbk-ec\okjb-ec.iml" />
     </modules>
   </component>
 </project>

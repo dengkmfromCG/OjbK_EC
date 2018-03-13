@@ -1,1 +1,1 @@
-include ':example', ':ojkb-annotations', ':ojkb-compiler', ':okjb-core', ':okjb-ec'
+include ':example', ':ojbk-annotations', ':ojbk-compiler', ':ojbk-core', ':ojbk-ec', ':ojbk-ui'
