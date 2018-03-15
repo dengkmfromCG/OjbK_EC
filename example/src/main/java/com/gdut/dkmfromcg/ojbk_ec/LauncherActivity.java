@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import com.gdut.dkmfromcg.ojbk_ec.fragments.ExampleFragment;
 import com.gdut.dkmfromcg.ojkb.activities.ProxyActivity;
+import com.gdut.dkmfromcg.ojkb.app.Configurator;
+import com.gdut.dkmfromcg.ojkb.app.DKM;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
 import com.gdut.dkmfromcg.ojkb.util.storage.PreferenceTool;
 import com.gdut.dkmfromcg.okjbec.launcher.ILauncherListener;
@@ -28,6 +30,7 @@ public class LauncherActivity extends ProxyActivity implements ILauncherListener
         if (actionBar != null) {
             actionBar.hide();
         }
+        Configurator.getInstance().withActivity(this);
     }
 
     @Override

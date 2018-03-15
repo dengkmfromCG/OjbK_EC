@@ -29,7 +29,7 @@ dependencies {
     //导入的其他Module
     implementation project(':ojbk-ec')
     implementation project(':ojbk-annotations')
-    implementation project(':ojbk-compiler')
+    annotationProcessor project(':ojbk-compiler')
     implementation project(':ojbk-core')
     //annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1' //compiler
     implementation 'com.android.support:support-v4:26.1.0'

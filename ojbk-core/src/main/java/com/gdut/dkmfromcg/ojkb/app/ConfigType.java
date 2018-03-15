@@ -11,4 +11,8 @@ public enum  ConfigType {
     CONFIG_READY,//控制或配置初识化完成与否
     ICON,
     INTERCEPTOR,//OkHttp拦截器
+    ACTIVITY,
+    /*WeChat 参数appId和appSecret*/
+    WE_CHAT_APP_ID,
+    WE_CHAT_APP_SECRET
 }

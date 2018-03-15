@@ -31,6 +31,7 @@ public abstract class ProxyActivity extends SupportActivity {
         if (savedInstanceState == null){
             loadRootFragment(R.id.fragment_container,setRootFragment());
         }
+
     }
 
     @Override
@@ -39,4 +40,6 @@ public abstract class ProxyActivity extends SupportActivity {
         System.gc();
         System.runFinalization();
     }
+
+
 }

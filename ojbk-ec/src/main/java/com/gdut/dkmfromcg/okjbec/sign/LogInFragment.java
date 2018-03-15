@@ -28,6 +28,9 @@ import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
 import com.gdut.dkmfromcg.ojkb.net.RestClient;
 import com.gdut.dkmfromcg.ojkb.net.callback.ISuccess;
 import com.gdut.dkmfromcg.ojkb.util.animator.RxAnimationTool;
+import com.gdut.dkmfromcg.ojkb.util.log.Logger;
+import com.gdut.dkmfromcg.ojkb.wechat.DkmWeChat;
+import com.gdut.dkmfromcg.ojkb.wechat.callbacks.IWeChatSignInCallback;
 import com.gdut.dkmfromcg.okjbec.R;
 import com.gdut.dkmfromcg.okjbec.R2;
 
@@ -273,9 +276,22 @@ public class LogInFragment extends ProxyFragment {
     public void onForgetPasswordClicked() {
     }
 
+    /*游客试用*/
     @OnClick(R2.id.try_use)
     public void onTryUseClicked() {
 
+    }
+
+
+    //微信登录时,调用该方法...并且要传入 WeChat的appId和appSecret
+    private void weChatSignIn(){
+        DkmWeChat.getInstance().onSignSuccess(new IWeChatSignInCallback() {
+            @Override
+            public void onSignInSuccess(String userInfo) {
+                //登陆成功的回调
+                Logger.d("useInfo: ",userInfo);
+            }
+        }).signIn();//signIn方法内进行请求
     }
 
 }

@@ -1,5 +1,7 @@
 package com.gdut.dkmfromcg.ojkb.app;
 
+import android.app.Activity;
+
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 
@@ -44,6 +46,21 @@ public class Configurator {
     public final Configurator withInterceptors(ArrayList<Interceptor> interceptors) {
         INTERCEPTORS.addAll(interceptors);
         DKM_CONFIGS.put(ConfigType.INTERCEPTOR, INTERCEPTORS);
+        return this;
+    }
+
+    public final Configurator withWeChatAppId(String appId) {
+        DKM_CONFIGS.put(ConfigType.WE_CHAT_APP_ID, appId);
+        return this;
+    }
+
+    public final Configurator withWeChatAppSecret(String appSecret) {
+        DKM_CONFIGS.put(ConfigType.WE_CHAT_APP_SECRET, appSecret);
+        return this;
+    }
+
+    public final Configurator withActivity(Activity activity) {
+        DKM_CONFIGS.put(ConfigType.ACTIVITY, activity);
         return this;
     }
 

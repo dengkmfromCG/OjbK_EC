@@ -19,6 +19,8 @@ public class ExampleApp extends Application {
         DKM.init(this)
                 .putApiHost("http://192.168.0.189/")
                 .withInterceptor(new DebugInterceptor("index", R.raw.text))
+                .withWeChatAppId("your wechat appId")
+                .withWeChatAppSecret("your wechat appSecret")
                 .configure();
     }
 }
