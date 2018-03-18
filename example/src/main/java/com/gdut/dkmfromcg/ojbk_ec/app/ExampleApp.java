@@ -5,6 +5,8 @@ import android.app.Application;
 import com.gdut.dkmfromcg.ojbk_ec.R;
 import com.gdut.dkmfromcg.ojkb.app.DKM;
 import com.gdut.dkmfromcg.ojkb.net.interceptors.DebugInterceptor;
+import com.joanzapata.iconify.Iconify;
+import com.joanzapata.iconify.fonts.FontAwesomeModule;
 
 /**
  * Created by dkmFromCG on 2018/3/8.
@@ -22,5 +24,8 @@ public class ExampleApp extends Application {
                 .withWeChatAppId("your wechat appId")
                 .withWeChatAppSecret("your wechat appSecret")
                 .configure();
+
+
+        Iconify.with(new FontAwesomeModule());
     }
 }

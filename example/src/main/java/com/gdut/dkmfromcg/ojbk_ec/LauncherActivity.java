@@ -7,16 +7,12 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.gdut.dkmfromcg.ojbk_ec.fragments.ExampleFragment;
+import com.gdut.dkmfromcg.ojbk_ec.fragments.MainFragment;
 import com.gdut.dkmfromcg.ojkb.activities.ProxyActivity;
 import com.gdut.dkmfromcg.ojkb.app.Configurator;
-import com.gdut.dkmfromcg.ojkb.app.DKM;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
-import com.gdut.dkmfromcg.ojkb.util.storage.PreferenceTool;
 import com.gdut.dkmfromcg.okjbec.launcher.ILauncherListener;
-import com.gdut.dkmfromcg.okjbec.launcher.LauncherFragment;
-import com.gdut.dkmfromcg.okjbec.launcher.LauncherScrollFragment;
 import com.gdut.dkmfromcg.okjbec.launcher.OnLauncherFinishTag;
-import com.gdut.dkmfromcg.okjbec.launcher.launcherScroll.ScrollLauncherTag;
 import com.gdut.dkmfromcg.okjbec.sign.ISignListener;
 import com.gdut.dkmfromcg.okjbec.sign.LogInFragment;
 
@@ -35,11 +31,13 @@ public class LauncherActivity extends ProxyActivity implements ILauncherListener
 
     @Override
     public ProxyFragment setRootFragment() {
-        //如果是第一次打开App
+        /*//如果是第一次打开App
         if (! PreferenceTool.getAppFlag(ScrollLauncherTag.HAS_FIRST_LAUNCHER_APP.name())){
             return new LauncherScrollFragment();
         }
-        return new LauncherFragment();
+        return new LauncherFragment();*/
+
+        return new MainFragment();
     }
 
     @Override

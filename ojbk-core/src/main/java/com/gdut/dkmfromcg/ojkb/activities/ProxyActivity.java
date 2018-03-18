@@ -39,6 +39,7 @@ public abstract class ProxyActivity extends SupportActivity {
         super.onDestroy();
         System.gc();
         System.runFinalization();
+        
     }
 
 
