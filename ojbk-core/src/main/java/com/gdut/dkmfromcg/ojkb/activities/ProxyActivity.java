@@ -8,6 +8,7 @@ import com.gdut.dkmfromcg.ojkb.R;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
 
 import me.yokeyword.fragmentation.SupportActivity;
+import qiu.niorgai.StatusBarCompat;
 
 /**
  * Created by dkmFromCG on 2018/3/11.
@@ -22,6 +23,7 @@ public abstract class ProxyActivity extends SupportActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initContainer(savedInstanceState);
+        StatusBarCompat.translucentStatusBar(this,true);
     }
 
     private void initContainer(@Nullable Bundle savedInstanceState){

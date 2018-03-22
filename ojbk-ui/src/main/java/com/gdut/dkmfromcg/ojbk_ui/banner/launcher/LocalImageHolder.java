@@ -1,4 +1,4 @@
-package com.gdut.dkmfromcg.okjbec.launcher.launcherScroll;
+package com.gdut.dkmfromcg.ojbk_ui.banner.launcher;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatImageView;
@@ -11,7 +11,7 @@ import com.bigkoo.convenientbanner.holder.Holder;
  * function:
  */
 
-public class ScrollLauncherHolder implements Holder<Integer> {
+public class LocalImageHolder implements Holder<Integer> {
 
     private AppCompatImageView mImageView = null;
 

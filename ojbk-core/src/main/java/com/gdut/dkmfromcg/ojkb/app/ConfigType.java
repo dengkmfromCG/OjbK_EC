@@ -12,7 +12,11 @@ public enum  ConfigType {
     ICON,
     INTERCEPTOR,//OkHttp拦截器
     ACTIVITY,
+    HANDLER,
+
     /*WeChat 参数appId和appSecret*/
     WE_CHAT_APP_ID,
     WE_CHAT_APP_SECRET
+
+
 }

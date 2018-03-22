@@ -252,12 +252,12 @@ public final class FileUtil {
     private static void refreshDCIM() {
         if (Build.VERSION.SDK_INT >= 19) {
             //兼容android4.4版本，只扫描存放照片的目录
-            MediaScannerConnection.scanFile(DKM.getApplication(),
+            MediaScannerConnection.scanFile(DKM.getApplicationContext(),
                     new String[]{Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getPath()},
                     null, null);
         } else {
             //扫描整个SD卡来更新系统图库，当文件很多时用户体验不佳，且不适合4.4以上版本
-            DKM.getApplication().sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" +
+            DKM.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" +
                     Environment.getExternalStorageDirectory())));
         }
     }
@@ -266,7 +266,7 @@ public final class FileUtil {
      * 读取raw目录中的文件,并返回为字符串
      */
     public static String getRawFile(int id) {
-        final InputStream is = DKM.getApplication().getResources().openRawResource(id);
+        final InputStream is = DKM.getApplicationContext().getResources().openRawResource(id);
         final BufferedInputStream bis = new BufferedInputStream(is);
         final InputStreamReader isr = new InputStreamReader(bis);
         final BufferedReader br = new BufferedReader(isr);
@@ -293,7 +293,7 @@ public final class FileUtil {
 
 
     public static void setIconFont(String path, TextView textView) {
-        final Typeface typeface = Typeface.createFromAsset(DKM.getApplication().getAssets(), path);
+        final Typeface typeface = Typeface.createFromAsset(DKM.getApplicationContext().getAssets(), path);
         textView.setTypeface(typeface);
     }
 
@@ -306,7 +306,7 @@ public final class FileUtil {
         InputStreamReader isr = null;
         BufferedReader br = null;
         StringBuilder stringBuilder = null;
-        final AssetManager assetManager = DKM.getApplication().getAssets();
+        final AssetManager assetManager = DKM.getApplicationContext().getAssets();
         try {
             is = assetManager.open(name);
             bis = new BufferedInputStream(is);

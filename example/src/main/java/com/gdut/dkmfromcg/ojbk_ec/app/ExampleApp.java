@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.gdut.dkmfromcg.ojbk_ec.R;
 import com.gdut.dkmfromcg.ojkb.app.DKM;
+import com.gdut.dkmfromcg.ojkb.icon.FontEcModule;
 import com.gdut.dkmfromcg.ojkb.net.interceptors.DebugInterceptor;
 import com.joanzapata.iconify.Iconify;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
@@ -19,13 +20,14 @@ public class ExampleApp extends Application {
     public void onCreate() {
         super.onCreate();
         DKM.init(this)
-                .putApiHost("http://192.168.0.189/")
+                .putApiHost("https://www.easy-mock.com/")
                 .withInterceptor(new DebugInterceptor("index", R.raw.text))
                 .withWeChatAppId("your wechat appId")
                 .withWeChatAppSecret("your wechat appSecret")
                 .configure();
 
 
-        Iconify.with(new FontAwesomeModule());
+        Iconify.with(new FontAwesomeModule())
+        .with(new FontEcModule());
     }
 }

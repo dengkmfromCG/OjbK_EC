@@ -7,7 +7,7 @@ android {
 
 
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -41,5 +41,6 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     //轮播图 依赖
     implementation 'com.bigkoo:convenientbanner:2.0.5'
+
 
 }

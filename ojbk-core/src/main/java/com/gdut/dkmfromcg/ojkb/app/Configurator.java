@@ -1,6 +1,10 @@
 package com.gdut.dkmfromcg.ojkb.app;
 
 import android.app.Activity;
+import android.os.Handler;
+
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.WeakHashMap;
@@ -16,7 +20,7 @@ public class Configurator {
 
     private static final WeakHashMap<Object,Object> DKM_CONFIGS=new WeakHashMap<>();
     private static final ArrayList<Interceptor> INTERCEPTORS = new ArrayList<>();
-
+    private static final Handler HANDLER = new Handler();
     /*单例模式*/
     private static class Holder{
         private static final Configurator INSTANCE=new Configurator();
@@ -26,6 +30,7 @@ public class Configurator {
     }
     private Configurator(){
         DKM_CONFIGS.put(ConfigType.CONFIG_READY,false); //初始化时传入false,说明还没准备好配置
+        DKM_CONFIGS.put(ConfigType.HANDLER,HANDLER);
     }
 
     public WeakHashMap<Object,Object> getDKM_CONFIGS() {
@@ -65,6 +70,7 @@ public class Configurator {
     }
 
     public final void configure(){
+        Logger.addLogAdapter(new AndroidLogAdapter());
         DKM_CONFIGS.put(ConfigType.CONFIG_READY,true);
     }
 

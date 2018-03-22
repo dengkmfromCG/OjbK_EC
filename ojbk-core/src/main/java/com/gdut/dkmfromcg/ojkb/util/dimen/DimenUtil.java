@@ -12,13 +12,13 @@ import com.gdut.dkmfromcg.ojkb.app.DKM;
 public final class DimenUtil {
 
     public static int getScreenWidth() {
-        final Resources resources = DKM.getApplication().getResources();
+        final Resources resources = DKM.getApplicationContext().getResources();
         final DisplayMetrics dm = resources.getDisplayMetrics();
         return dm.widthPixels;
     }
 
     public static int getScreenHeight() {
-        final Resources resources = DKM.getApplication().getResources();
+        final Resources resources = DKM.getApplicationContext().getResources();
         final DisplayMetrics dm = resources.getDisplayMetrics();
         return dm.heightPixels;
     }

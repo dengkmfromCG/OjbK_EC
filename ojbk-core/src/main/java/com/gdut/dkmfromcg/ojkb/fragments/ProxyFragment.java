@@ -7,4 +7,8 @@ package com.gdut.dkmfromcg.ojkb.fragments;
 
 public abstract class ProxyFragment extends PermissionCheckerFragment {
 
+    @SuppressWarnings("unchecked")
+    public <T extends ProxyFragment> T getParentFrag() {
+        return (T) getParentFragment();
+    }
 }

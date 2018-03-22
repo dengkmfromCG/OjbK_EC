@@ -1,6 +1,7 @@
 package com.gdut.dkmfromcg.ojkb.app;
 
 import android.content.Context;
+import android.os.Handler;
 
 import java.util.WeakHashMap;
 
@@ -22,9 +23,14 @@ public class DKM {
         return getConfigurator().getConfiguration(key);
     }
 
-    public static Context getApplication(){
+    public static Context getApplicationContext(){
         return getConfiguration(ConfigType.APPLICATION_CONTEXT);
     }
+
+    public static Handler getHandler(){
+        return getConfiguration(ConfigType.HANDLER);
+    }
+
 
     private static Configurator getConfigurator() {
         return Configurator.getInstance();

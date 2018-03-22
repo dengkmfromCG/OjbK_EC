@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 
 
 android {
@@ -6,7 +7,7 @@ android {
     buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.gdut.dkmfromcg.ojbk_ec"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -22,7 +23,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
@@ -31,9 +32,18 @@ dependencies {
     implementation project(':ojbk-annotations')
     annotationProcessor project(':ojbk-compiler')
     implementation project(':ojbk-core')
-    //annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1' //compiler
+    //ButterKnife依赖
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
     implementation 'com.android.support:appcompat-v7:26.1.0'
-
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+    implementation project(':ojbk-ui')
+    //RecyclerView 依赖
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
+    //RecyclerView 分割线
+    implementation 'com.choices.divider:RecyclerView_Divider:1.0.0'
+    implementation 'com.bigkoo:convenientbanner:2.0.5'
 }

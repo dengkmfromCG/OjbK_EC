@@ -21,7 +21,7 @@ public final class PreferenceTool {
      * Context.getSharedPreferences(String name,int mode)生成name.xml
      */
     private static final SharedPreferences PREFERENCES =
-            PreferenceManager.getDefaultSharedPreferences(DKM.getApplication());
+            PreferenceManager.getDefaultSharedPreferences(DKM.getApplicationContext());
     private static final String APP_PREFERENCES_KEY = "profile";
 
     private static SharedPreferences getAppPreference() {

@@ -7,13 +7,13 @@ import android.view.View;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
+import com.gdut.dkmfromcg.ojbk_ui.banner.launcher.LocalImageBannerCreator;
 import com.gdut.dkmfromcg.ojkb.app.AccountManager;
 import com.gdut.dkmfromcg.ojkb.app.IUserChecker;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
 import com.gdut.dkmfromcg.ojkb.util.storage.PreferenceTool;
 import com.gdut.dkmfromcg.okjbec.R;
-import com.gdut.dkmfromcg.okjbec.launcher.launcherScroll.ScrollLauncherHolderCreator;
-import com.gdut.dkmfromcg.okjbec.launcher.launcherScroll.ScrollLauncherTag;
+
 
 import java.util.ArrayList;
 
@@ -52,12 +52,7 @@ public class LauncherScrollFragment extends ProxyFragment implements OnItemClick
         INTEGERS.add(R.mipmap.launcher_02);
         INTEGERS.add(R.mipmap.launcher_03);
         INTEGERS.add(R.mipmap.launcher_04);
-        mConvenientBanner
-                .setPages(new ScrollLauncherHolderCreator(), INTEGERS)
-                .setPageIndicator(new int[]{R.drawable.dot_normal, R.drawable.dot_focus})
-                .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.CENTER_HORIZONTAL)
-                .setOnItemClickListener(this)
-                .setCanLoop(false);
+        LocalImageBannerCreator.setDefault(mConvenientBanner,INTEGERS,this);
     }
 
     @Override
