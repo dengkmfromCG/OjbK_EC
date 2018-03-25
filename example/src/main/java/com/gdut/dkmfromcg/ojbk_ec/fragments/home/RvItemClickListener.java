@@ -1,11 +1,10 @@
 package com.gdut.dkmfromcg.ojbk_ec.fragments.home;
 
-import android.content.Context;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
-import com.gdut.dkmfromcg.ojbk_ec.fragments.index.DetailFragment;
+import com.gdut.dkmfromcg.ojbk_ec.fragments.detail.DetailFragment;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
 
 /**

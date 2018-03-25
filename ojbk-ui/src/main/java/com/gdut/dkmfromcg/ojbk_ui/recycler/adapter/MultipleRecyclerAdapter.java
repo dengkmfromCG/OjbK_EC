@@ -41,7 +41,7 @@ public class MultipleRecyclerAdapter extends
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .dontAnimate();
 
-    private MultipleRecyclerAdapter(List<MultipleItemEntity> data) {
+    public MultipleRecyclerAdapter(List<MultipleItemEntity> data) {
         super(data);
         init();
     }
@@ -96,6 +96,7 @@ public class MultipleRecyclerAdapter extends
                 Glide.with(mContext)
                         .load(imageUrl)
                         .apply(RECYCLER_OPTIONS)
+                        .thumbnail( 0.1f )//加载缩略图,尽量避免内存溢出
                         .into((ImageView) holder.getView(R.id.img_multiple));
                 holder.setText(R.id.tv_multiple, text);
                 break;

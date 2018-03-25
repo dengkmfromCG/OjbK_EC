@@ -1,13 +1,80 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gdut.dkmfromcg.ojbk_ec.fragments.sort.SortFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_orange_dark"
+        android:gravity="center">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingTop="6dp"
+            android:text="分类"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <!--<android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/app_background"
+        android:baselineAligned="true"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_sorts"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <android.support.v7.widget.ContentFrameLayout
+            android:id="@+id/sort_content_container"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="2.5" />
+
+    </android.support.v7.widget.LinearLayoutCompat>-->
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background"
+        android:baselineAligned="true"
+        android:orientation="horizontal">
+
+        <q.rorbin.verticaltablayout.VerticalTabLayout
+            android:id="@+id/tab_sorts_menu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:indicator_gravity="left"
+            app:indicator_color="@color/app_main"
+            app:tab_height="50dp"
+            app:tab_mode="scrollable"
+            android:layout_weight="1"/>
+
+        <FrameLayout
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#d8d5cece"/>
+
+        <fr.castorflex.android.verticalviewpager.VerticalViewPager
+            android:id="@+id/vp_sort_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="3" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</android.support.v7.widget.LinearLayoutCompat>

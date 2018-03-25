@@ -1,4 +1,4 @@
-package com.gdut.dkmfromcg.ojbk_ec.fragments.index;
+package com.gdut.dkmfromcg.ojbk_ec.fragments.detail;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

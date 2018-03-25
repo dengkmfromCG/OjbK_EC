@@ -14,5 +14,6 @@ public enum MultipleFields {
     SPAN_SIZE,
     ID,
     NAME,
-    TAG
+    TAG,
+    CATEGORY_LIST//分类的具体数据
 }

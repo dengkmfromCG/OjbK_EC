@@ -4,7 +4,9 @@ import com.chad.library.adapter.base.entity.MultiItemEntity;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.SoftReference;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Created by dkmFromCG on 2018/3/19.
@@ -23,7 +25,13 @@ public class MultipleItemEntity implements MultiItemEntity {
 
     MultipleItemEntity(LinkedHashMap<Object, Object> fields) {
         //FIELDS_REFERENCE.get()不会等于null,是因为 MULTIPLE_FIELDS的强引用一直没被gc掉 ??是吗,不确定
-        FIELDS_REFERENCE.get().putAll(fields);
+        //FIELDS_REFERENCE.get().putAll(fields); 采用迭代的方式去添加,而不是 for each
+        Iterator iterator=fields.entrySet().iterator();
+        while (iterator.hasNext()){
+            final LinkedHashMap.Entry entry= (LinkedHashMap.Entry) iterator.next();
+            FIELDS_REFERENCE.get().put(entry.getKey(),entry.getValue());
+        }
+
     }
 
     public static MultipleItemEntityBuilder builder(){

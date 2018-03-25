@@ -28,8 +28,8 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/tb_home"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@android:color/transparent"
+            android:layout_height="80dp"
+            android:background="@android:color/holo_orange_dark"
             app:layout_scrollFlags="scroll|enterAlways"
             app:layout_behavior="com.gdut.dkmfromcg.ojbk_ec.fragments.home.TranslucentBehavior">
 
