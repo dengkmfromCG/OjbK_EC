@@ -1,13 +1,13 @@
 package com.gdut.dkmfromcg.ojkb.net.download;
 
+
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 
 
-import com.gdut.dkmfromcg.ojkb.app.DKM;
-import com.gdut.dkmfromcg.ojkb.net.callback.IRequest;
-import com.gdut.dkmfromcg.ojkb.net.callback.ISuccess;
+import com.gdut.dkmfromcg.ojkb.net.callback.RequestCallback;
 import com.gdut.dkmfromcg.ojkb.util.file.FileUtil;
 
 import java.io.File;
@@ -16,17 +16,18 @@ import java.io.InputStream;
 import okhttp3.ResponseBody;
 
 /**
- * Created by 傅令杰 on 2017/4/2
+ * Created by dkmFromCG on 2018/3/12.
+ * function:
  */
 
-final class SaveFileTask extends AsyncTask<Object, Void, File> {
+public class SaveFileTask extends AsyncTask<Object, Integer, File> {
 
-    private final IRequest REQUEST;
-    private final ISuccess SUCCESS;
 
-    SaveFileTask(IRequest REQUEST, ISuccess SUCCESS) {
-        this.REQUEST = REQUEST;
-        this.SUCCESS = SUCCESS;
+    private final RequestCallback<String> mRequestCallback;
+    private final Context mContext;
+    public SaveFileTask(Context context,RequestCallback<String> requestCallback) {
+        this.mContext=context;
+        this.mRequestCallback=requestCallback;
     }
 
     @Override
@@ -43,31 +44,43 @@ final class SaveFileTask extends AsyncTask<Object, Void, File> {
             extension = "";
         }
         if (name == null) {
+            //这里应该监听 计算过程 ,得到 下载进度
             return FileUtil.writeToDisk(is, downloadDir, extension.toUpperCase(), extension);
         } else {
+            //这里应该监听 计算过程 ,得到 下载进度
             return FileUtil.writeToDisk(is, downloadDir, name);
+        }
+    }
+
+    @Override
+    protected void onProgressUpdate(Integer... values) {
+        if (mRequestCallback!=null){
+            mRequestCallback.onProgress(0,0,0);
         }
     }
 
     @Override
     protected void onPostExecute(File file) {
         super.onPostExecute(file);
-        if (SUCCESS != null) {
-            SUCCESS.onSuccess(file.getPath());
-        }
-        if (REQUEST != null) {
-            REQUEST.onRequestEnd();
+        if (mRequestCallback != null) {
+            mRequestCallback.onSuccess(file.getPath());
         }
         autoInstallApk(file);
     }
 
+    /**
+     * 如果下载好的文件是 apk 文件,则自动安装
+     * @param file
+     */
     private void autoInstallApk(File file) {
         if (FileUtil.getExtension(file.getPath()).equals("apk")) {
             final Intent install = new Intent();
             install.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             install.setAction(Intent.ACTION_VIEW);
             install.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
-            DKM.getApplicationContext().startActivity(install);
+            mContext.startActivity(install);
         }
     }
+
+
 }

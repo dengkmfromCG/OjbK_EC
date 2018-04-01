@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.gdut.dkmfromcg.ojbk_ui.bottom.BaseBottomTabFragment">
+
+    <com.gdut.dkmfromcg.ojbk_ui.widget.NotSlideViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_tab" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/bottom_tab"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        style="@style/MyTabLayout"
+        app:tabMode="fixed"
+        app:tabIndicatorHeight="0dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" />
+
+</RelativeLayout>

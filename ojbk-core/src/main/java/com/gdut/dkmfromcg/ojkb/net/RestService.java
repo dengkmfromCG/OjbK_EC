@@ -5,7 +5,6 @@ import java.util.Map;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
-import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.FieldMap;
@@ -18,6 +17,7 @@ import retrofit2.http.Part;
 import retrofit2.http.QueryMap;
 import retrofit2.http.Streaming;
 import retrofit2.http.Url;
+import rx.Observable;
 
 /**
  * Created by dkmFromCG on 2018/3/12.
@@ -28,32 +28,31 @@ public interface RestService {
 
 
     @GET
-    Call<String> get(@Url String url, @QueryMap Map<String,Object> params); //@QueryMap在@GET 时起到字符串拼接作用
+    Observable<String> get(@Url String url, @QueryMap Map<String, Object> params); //@QueryMap在@GET 时起到字符串拼接作用
 
     @FormUrlEncoded
     @POST
-    Call<String> post(@Url String url, @FieldMap Map<String,Object> params);//@FieldMap在@POST 时起到字符串拼接作用
+    Observable<String> post(@Url String url, @FieldMap Map<String, Object> params);//@FieldMap在@POST 时起到字符串拼接作用
 
     @POST
-    Call<String> postRaw(@Url String url, @Body RequestBody body); //传入原始数据时,不可以添加 @FormUrlEncoded 注解
+    Observable<String> postRaw(@Url String url, @Body RequestBody body); //传入原始数据时,不可以添加 @FormUrlEncoded 注解
 
     @FormUrlEncoded
     @PUT
-    Call<String> put(@Url String url, @FieldMap Map<String,Object> params);
+    Observable<String> put(@Url String url, @FieldMap Map<String, Object> params);
 
     @PUT
-    Call<String> putRaw(@Url String url, @Body RequestBody body);
+    Observable<String> putRaw(@Url String url, @Body RequestBody body);
 
     @DELETE
-    Call<String> delete(@Url String url, @QueryMap Map<String,Object> params);
+    Observable<String> delete(@Url String url, @QueryMap Map<String, Object> params);
 
     @Streaming //下载时,默认是先下载到内存区,下载完成后再写入文件,这样就会造成内存溢出.而 @Streaming避免这种情况,可以一边下载一边存入文件
     @GET
-    Call<ResponseBody> download(@Url String url, @QueryMap Map<String,Object> params);
+    Observable<ResponseBody> download(@Url String url, @QueryMap Map<String, Object> params);
 
     @Multipart
     @POST
-    Call<String> upload(@Url String url, @Part MultipartBody.Part file);
-
+    Observable<String> upload(@Url String url, @Part MultipartBody.Part file);
 
 }

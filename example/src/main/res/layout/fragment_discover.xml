@@ -1,13 +1,29 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.gdut.dkmfromcg.ojbk_ec.fragments.discover.DiscoverFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="60dp"
+        android:background="@android:color/holo_orange_dark"
+        android:gravity="center">
 
-</FrameLayout>
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingTop="6dp"
+            android:text="发现"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.ContentFrameLayout
+        android:id="@+id/web_discovery_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</android.support.v7.widget.LinearLayoutCompat>

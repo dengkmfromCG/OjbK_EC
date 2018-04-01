@@ -17,4 +17,5 @@ public abstract class ProxyFragment extends PermissionCheckerFragment {
     public <T extends ProxyFragment> T getParentFrag() {
         return (T) getParentFragment();
     }
+
 }

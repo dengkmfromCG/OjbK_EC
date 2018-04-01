@@ -2,18 +2,14 @@ package com.gdut.dkmfromcg.okjbec.sign;
 
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.util.Patterns;
 import android.view.View;
-import android.widget.Toast;
 
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
-import com.gdut.dkmfromcg.ojkb.net.RestClient;
-import com.gdut.dkmfromcg.ojkb.net.callback.ISuccess;
 import com.gdut.dkmfromcg.okjbec.R;
 import com.gdut.dkmfromcg.okjbec.R2;
 
@@ -37,11 +33,12 @@ public class RegisterFragment extends ProxyFragment {
     TextInputEditText mRePassword = null;
 
     private ISignListener mISignListener = null;
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        if (activity instanceof ISignListener){
-            mISignListener= (ISignListener) activity;
+        if (activity instanceof ISignListener) {
+            mISignListener = (ISignListener) activity;
         }
     }
 

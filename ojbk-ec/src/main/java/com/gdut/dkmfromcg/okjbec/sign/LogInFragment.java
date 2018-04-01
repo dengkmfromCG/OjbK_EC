@@ -18,19 +18,16 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.util.Patterns;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.Toast;
 
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
-import com.gdut.dkmfromcg.ojkb.net.RestClient;
-import com.gdut.dkmfromcg.ojkb.net.callback.ISuccess;
 import com.gdut.dkmfromcg.ojkb.util.animator.RxAnimationTool;
 import com.gdut.dkmfromcg.ojkb.util.log.Logger;
-import com.gdut.dkmfromcg.ojkb.wechat.DkmWeChat;
-import com.gdut.dkmfromcg.ojkb.wechat.callbacks.IWeChatSignInCallback;
+import com.gdut.dkmfromcg.okjbec.wechat.DkmWeChat;
+import com.gdut.dkmfromcg.okjbec.wechat.callbacks.IWeChatSignInCallback;
 import com.gdut.dkmfromcg.okjbec.R;
 import com.gdut.dkmfromcg.okjbec.R2;
 

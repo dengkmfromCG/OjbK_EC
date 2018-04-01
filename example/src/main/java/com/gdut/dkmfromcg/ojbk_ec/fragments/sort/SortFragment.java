@@ -14,12 +14,13 @@ import android.view.View;
 
 import com.alibaba.fastjson.JSONArray;
 import com.gdut.dkmfromcg.ojbk_ec.R;
+import com.gdut.dkmfromcg.ojbk_ec.R2;
 import com.gdut.dkmfromcg.ojbk_ec.fragments.sort.model.SortDataConverter;
 import com.gdut.dkmfromcg.ojbk_ui.recycler.data.MultipleFields;
 import com.gdut.dkmfromcg.ojbk_ui.recycler.data.MultipleItemEntity;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
 import com.gdut.dkmfromcg.ojkb.net.RestClient;
-import com.gdut.dkmfromcg.ojkb.net.callback.ISuccess;
+import com.gdut.dkmfromcg.ojkb.net.callback.RequestCallback;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,6 +34,7 @@ import q.rorbin.verticaltablayout.VerticalTabLayout;
 import q.rorbin.verticaltablayout.adapter.TabAdapter;
 import q.rorbin.verticaltablayout.widget.ITabView;
 import q.rorbin.verticaltablayout.widget.TabView;
+import rx.Subscription;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,15 +42,15 @@ import q.rorbin.verticaltablayout.widget.TabView;
 public class SortFragment extends ProxyFragment {
 
 
-    @BindView(R.id.tab_sorts_menu)
+    @BindView(R2.id.tab_sorts_menu)
     VerticalTabLayout tabSortsMenu;
-    @BindView(R.id.vp_sort_content)
+    @BindView(R2.id.vp_sort_content)
     VerticalViewPager vpSortContent;
 
     private Context mContext = null;
     private final int LOAD_SUCCESS = 1;
     private List<MultipleItemEntity> mData = null;
-    private List<Fragment> fragments=new ArrayList<>();
+    private List<Fragment> fragments = new ArrayList<>();
 /*    @SuppressLint("HandlerLeak")
     private final Handler handler = new Handler() {
         @Override
@@ -98,7 +100,7 @@ public class SortFragment extends ProxyFragment {
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
-        mContext=getContext();
+        mContext = getContext();
     }
 
     @Override
@@ -115,14 +117,13 @@ public class SortFragment extends ProxyFragment {
 
             }
         }).start();*/
-
         RestClient.builder()
                 .url(" https://www.easy-mock.com/mock/5aafcf3eaf4e6c5740e46244/ojbkec/sort")
-                .loader(mContext)
-                .success(new ISuccess() {
+                .build()
+                .get(new RequestCallback<String>() {
                     @Override
                     public void onSuccess(String response) {
-                        mData=new SortDataConverter().setJsonData(response).convert();
+                        mData = new SortDataConverter().setJsonData(response).convert();
                         tabSortsMenu.setTabAdapter(new TabAdapter() {
                             @Override
                             public int getCount() {
@@ -141,10 +142,10 @@ public class SortFragment extends ProxyFragment {
 
                             @Override
                             public ITabView.TabTitle getTitle(int position) {
-                                final String tabTitle=mData.get(position).getField(MultipleFields.TEXT);
-                                int selectColor=ContextCompat.getColor(mContext,R.color.app_main);
-                                int normalColor=ContextCompat.getColor(mContext,R.color.we_chat_black);
-                                return new ITabView.TabTitle.Builder().setContent(tabTitle).setTextColor(selectColor,normalColor).build();
+                                final String tabTitle = mData.get(position).getField(MultipleFields.TEXT);
+                                int selectColor = ContextCompat.getColor(mContext, R.color.app_main);
+                                int normalColor = ContextCompat.getColor(mContext, R.color.we_chat_black);
+                                return new ITabView.TabTitle.Builder().setContent(tabTitle).setTextColor(selectColor, normalColor).build();
                             }
 
                             @Override
@@ -153,13 +154,13 @@ public class SortFragment extends ProxyFragment {
                             }
                         });
 
-                        for (MultipleItemEntity entity:mData){
-                            final JSONArray category_list=entity.getField(MultipleFields.CATEGORY_LIST);
-                            final ContentFragment fragment= ContentFragment.getInstance(category_list);
+                        for (MultipleItemEntity entity : mData) {
+                            final JSONArray category_list = entity.getField(MultipleFields.CATEGORY_LIST);
+                            final ContentFragment fragment = ContentFragment.getInstance(category_list);
                             fragments.add(fragment);
                         }
-                        final MViewPagerAdapter vpAdapter=new MViewPagerAdapter(
-                                getActivity().getSupportFragmentManager(),fragments);
+                        final MViewPagerAdapter vpAdapter = new MViewPagerAdapter(
+                                getActivity().getSupportFragmentManager(), fragments);
                         vpSortContent.setAdapter(vpAdapter);
 
                         tabSortsMenu.addOnTabSelectedListener(new VerticalTabLayout.OnTabSelectedListener() {
@@ -181,7 +182,7 @@ public class SortFragment extends ProxyFragment {
 
                             @Override
                             public void onPageSelected(int position) {
-                                position=position%mData.size();
+                                position = position % mData.size();
                                 tabSortsMenu.setTabSelected(position);
                             }
 
@@ -190,11 +191,19 @@ public class SortFragment extends ProxyFragment {
 
                             }
                         });
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
 
                     }
-                })
-                .build()
-                .get();
+
+                    @Override
+                    public void addSubscription(Subscription subscription) {
+
+                    }
+                });
+
     }
 
 
@@ -217,12 +226,12 @@ public class SortFragment extends ProxyFragment {
     }
 
 
-
-    private class MViewPagerAdapter extends FragmentPagerAdapter{
+    private class MViewPagerAdapter extends FragmentPagerAdapter {
         private List<Fragment> mFragments;
-        public MViewPagerAdapter(FragmentManager fm,List<Fragment> fragments) {
+
+        public MViewPagerAdapter(FragmentManager fm, List<Fragment> fragments) {
             super(fm);
-            this.mFragments=fragments;
+            this.mFragments = fragments;
         }
 
         @Override

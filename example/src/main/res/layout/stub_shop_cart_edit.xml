@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="50dp">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_add_to_collect"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@color/app_main"
+        android:text="移入收藏"
+        android:textColor="@android:color/white"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_delete"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@color/red"
+        android:text="删除"
+        android:textColor="@android:color/white"/>
+
+
+</android.support.v7.widget.LinearLayoutCompat>

@@ -1,7 +1,7 @@
 package com.gdut.dkmfromcg.ojbk_ec.generators;
 
 
-import com.gdut.dkmfromcg.ojkb.wechat.templates.WXEntryTemplate;
+import com.gdut.dkmfromcg.okjbec.wechat.templates.WXEntryTemplate;
 import com.gdut.dkmfromcg.ojkb_annotations.EntryGenerator;
 
 /**

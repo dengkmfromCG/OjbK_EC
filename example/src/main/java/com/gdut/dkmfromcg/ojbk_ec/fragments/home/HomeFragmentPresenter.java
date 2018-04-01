@@ -7,7 +7,9 @@ import com.gdut.dkmfromcg.ojbk_ec.fragments.home.model.PagingBean;
 import com.gdut.dkmfromcg.ojbk_ui.recycler.data.DataConverter;
 import com.gdut.dkmfromcg.ojkb.app.DKM;
 import com.gdut.dkmfromcg.ojkb.net.RestClient;
-import com.gdut.dkmfromcg.ojkb.net.callback.ISuccess;
+import com.gdut.dkmfromcg.ojkb.net.callback.RequestCallback;
+
+import rx.Subscription;
 
 /**
  * Created by dkmFromCG on 2018/3/20.
@@ -23,8 +25,8 @@ public class HomeFragmentPresenter implements IContract.Presenter {
 
     HomeFragmentPresenter(IContract.View view) {
         mView = view;
-        BEAN=new PagingBean();
-        CONVERTER=new HomeDataConverter();
+        BEAN = new PagingBean();
+        CONVERTER = new HomeDataConverter();
     }
 
     @Override
@@ -34,7 +36,7 @@ public class HomeFragmentPresenter implements IContract.Presenter {
 
     @Override
     public void destroy() {
-        mView=null;
+        mView = null;
     }
 
     @Override
@@ -42,7 +44,8 @@ public class HomeFragmentPresenter implements IContract.Presenter {
         BEAN.setDelayed(1000);
         RestClient.builder()
                 .url("https://www.easy-mock.com/mock/5aafcf3eaf4e6c5740e46244/ojbkec/homeAd")
-                .success(new ISuccess() {
+                .build()
+                .get(new RequestCallback<String>() {
                     @Override
                     public void onSuccess(String response) {
                         final JSONObject object = JSON.parseObject(response);
@@ -53,9 +56,17 @@ public class HomeFragmentPresenter implements IContract.Presenter {
 
                         BEAN.addIndex();
                     }
-                })
-                .build()
-                .get();
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void addSubscription(Subscription subscription) {
+
+                    }
+                });
     }
 
     @Override
@@ -64,15 +75,16 @@ public class HomeFragmentPresenter implements IContract.Presenter {
         final int currentCount = BEAN.getCurrentCount();
         final int total = BEAN.getTotal();
         final int index = BEAN.getPageIndex();//index 暂时还没用上
-        if (mView.getAdapterDataSize() < pageSize||currentCount>=total){
+        if (mView.getAdapterDataSize() < pageSize || currentCount >= total) {
             mView.adapterLoadMoreEnd();
-        }else {
+        } else {
             DKM.getHandler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     RestClient.builder()
                             .url("https://www.easy-mock.com/mock/5aafcf3eaf4e6c5740e46244/ojbkec/homeAd")
-                            .success(new ISuccess() {
+                            .build()
+                            .get(new RequestCallback<String>() {
                                 @Override
                                 public void onSuccess(String response) {
                                     CONVERTER.clearData();
@@ -81,11 +93,19 @@ public class HomeFragmentPresenter implements IContract.Presenter {
                                     BEAN.setCurrentCount(mView.getAdapterDataSize());
                                     BEAN.addIndex();
                                 }
-                            })
-                            .build()
-                            .get();
+
+                                @Override
+                                public void onError(Throwable e) {
+
+                                }
+
+                                @Override
+                                public void addSubscription(Subscription subscription) {
+
+                                }
+                            });
                 }
-            },BEAN.getDelayed());
+            }, BEAN.getDelayed());
         }
     }
 
@@ -98,7 +118,7 @@ public class HomeFragmentPresenter implements IContract.Presenter {
 
                 mView.stopRefresh();
             }
-        },BEAN.getDelayed());
+        }, BEAN.getDelayed());
     }
 
 

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.gdut.dkmfromcg.ojkb.activities.ProxyActivity;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.yokeyword.fragmentation.ExtraTransaction;
+import me.yokeyword.fragmentation.ISupportFragment;
 import me.yokeyword.fragmentation.SupportFragmentDelegate;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
@@ -23,8 +25,9 @@ import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
  * function:
  */
 
-public abstract class BaseFragment extends SwipeBackFragment {
+public abstract class BaseFragment extends Fragment implements ISupportFragment {
 
+    //代理Fragment
     private final SupportFragmentDelegate DELEGATE = new SupportFragmentDelegate(this);
     protected FragmentActivity _mActivity = null;
 
@@ -33,15 +36,16 @@ public abstract class BaseFragment extends SwipeBackFragment {
 
     public abstract Object setLayout();
     public abstract void onBindView(@Nullable Bundle savedInstanceState,View rootView);
-    public final ProxyActivity getProxyActivity() {
-        return (ProxyActivity) _mActivity;
-    }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         DELEGATE.onAttach((Activity) context);
         _mActivity = DELEGATE.getActivity();
+    }
+
+    public final ProxyActivity getProxyActivity() {
+        return (ProxyActivity) _mActivity;
     }
 
     @Override
@@ -70,6 +74,8 @@ public abstract class BaseFragment extends SwipeBackFragment {
             rootView=inflater.inflate((Integer) setLayout(),container,false);
         }else if (setLayout() instanceof View){
             rootView= (View) setLayout();
+        }else {
+            throw new ClassCastException("type of setLayout() must be int or View!");
         }
         if (rootView!=null){
             mUnbinder= ButterKnife.bind(this,rootView);
@@ -144,6 +150,12 @@ public abstract class BaseFragment extends SwipeBackFragment {
     public void onSupportInvisible() {
         DELEGATE.onSupportInvisible();
     }
+
+    @Override
+    public boolean isSupportVisible() {
+        return DELEGATE.isSupportVisible();
+    }
+
 
     @Override
     public FragmentAnimator onCreateFragmentAnimator() {

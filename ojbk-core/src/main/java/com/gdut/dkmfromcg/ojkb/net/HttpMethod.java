@@ -5,7 +5,7 @@ package com.gdut.dkmfromcg.ojkb.net;
  * function:
  */
 
-public enum  HttpMethod {
+public enum HttpMethod {
     GET,
     POST,
     POST_RAW,

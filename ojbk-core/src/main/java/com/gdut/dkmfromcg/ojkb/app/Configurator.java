@@ -2,6 +2,7 @@ package com.gdut.dkmfromcg.ojkb.app;
 
 import android.app.Activity;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
@@ -64,7 +65,7 @@ public class Configurator {
         return this;
     }
 
-    public final Configurator withActivity(Activity activity) {
+    public final Configurator withActivity(AppCompatActivity activity) {
         DKM_CONFIGS.put(ConfigType.ACTIVITY, activity);
         return this;
     }

@@ -10,9 +10,9 @@ import com.gdut.dkmfromcg.ojbk_ec.fragments.mine.MineFragment;
 import com.gdut.dkmfromcg.ojbk_ec.fragments.shopping.ShoppingFragment;
 import com.gdut.dkmfromcg.ojbk_ec.fragments.sort.SortFragment;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
-import com.gdut.dkmfromcg.ojkb.fragments.bottom.BaseBottomTabFragment;
-import com.gdut.dkmfromcg.ojkb.fragments.bottom.ItemBuilder;
-import com.gdut.dkmfromcg.ojkb.fragments.bottom.TabItemBean;
+import com.gdut.dkmfromcg.ojbk_ui.bottom.BaseBottomTabFragment;
+import com.gdut.dkmfromcg.ojbk_ui.bottom.ItemBuilder;
+import com.gdut.dkmfromcg.ojbk_ui.bottom.TabItemBean;
 
 import java.util.LinkedHashMap;
 

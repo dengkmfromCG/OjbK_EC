@@ -3,7 +3,6 @@ package com.gdut.dkmfromcg.ojbk_ec;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.gdut.dkmfromcg.ojbk_ec.fragments.ExampleFragment;
@@ -11,6 +10,7 @@ import com.gdut.dkmfromcg.ojbk_ec.fragments.MainFragment;
 import com.gdut.dkmfromcg.ojkb.activities.ProxyActivity;
 import com.gdut.dkmfromcg.ojkb.app.Configurator;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
+import com.gdut.dkmfromcg.ojkb.util.log.Logger;
 import com.gdut.dkmfromcg.okjbec.launcher.ILauncherListener;
 import com.gdut.dkmfromcg.okjbec.launcher.OnLauncherFinishTag;
 import com.gdut.dkmfromcg.okjbec.sign.ISignListener;
@@ -44,10 +44,10 @@ public class LauncherActivity extends ProxyActivity implements ILauncherListener
     public void onLauncherFinish(OnLauncherFinishTag tag) {
         switch (tag) {
             case SIGNED:
-                startWithPop(new ExampleFragment());
+                getSupportDelegate().startWithPop(new ExampleFragment());
                 break;
             case NOT_SIGNED:
-                startWithPop(new LogInFragment());
+                getSupportDelegate().startWithPop(new LogInFragment());
                 break;
             default:
                 break;
@@ -57,14 +57,14 @@ public class LauncherActivity extends ProxyActivity implements ILauncherListener
     @Override
     public void onSignInSuccess() {
         Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
-        Log.d(TAG, ": "+getCallingActivity()+"denglu");
-        startWithPop(new ExampleFragment());
+        Logger.d(TAG, ": "+getCallingActivity()+"denglu");
+        getSupportDelegate().startWithPop(new ExampleFragment());
     }
 
     @Override
     public void onRegisterSuccess() {
         Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
-        Log.d(TAG, ": "+getCallingActivity()+"zhuce");
-        startWithPop(new ExampleFragment());
+        Logger.d(TAG, ": "+getCallingActivity()+"zhuce");
+        getSupportDelegate().startWithPop(new ExampleFragment());
     }
 }
