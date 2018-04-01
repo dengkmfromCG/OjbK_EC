@@ -14,15 +14,19 @@ import android.support.v7.widget.ViewStubCompat;
 import android.view.View;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
 import com.gdut.dkmfromcg.ojbk_ec.R;
 import com.gdut.dkmfromcg.ojbk_ui.recycler.data.MultipleItemEntity;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
 import com.gdut.dkmfromcg.ojkb.net.RestClient;
 import com.gdut.dkmfromcg.ojkb.net.callback.RequestCallback;
+import com.gdut.dkmfromcg.okjbec.pay.FastPay;
+import com.gdut.dkmfromcg.okjbec.pay.IAlPayResultListener;
 import com.joanzapata.iconify.widget.IconTextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.WeakHashMap;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -31,7 +35,7 @@ import rx.Subscription;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ShoppingFragment extends ProxyFragment {
+public class ShoppingFragment extends ProxyFragment implements IAlPayResultListener{
 
 
     @BindView(R.id.tv_shop_car_edit)
@@ -161,7 +165,7 @@ public class ShoppingFragment extends ProxyFragment {
 
     @OnClick(R.id.tv_shop_cart_pay)
     public void onTvShopCartPayClicked() {
-
+        createOrder();
     }
 
     @SuppressWarnings("RestrictedApi")
@@ -181,5 +185,64 @@ public class ShoppingFragment extends ProxyFragment {
         } else {
             rvShopCar.setVisibility(View.VISIBLE);
         }
+    }
+
+    //创建支付订单，注意创建订单和支付是两件事情
+    private void createOrder() {
+        final String orderUrl = "你的生成订单的API";
+        //生成 订单JSON的参数
+        final WeakHashMap<String, Object> orderParams = new WeakHashMap<>();
+        //加入你的参数
+        RestClient.builder()
+                .url(orderUrl)
+                .params(orderParams)
+                .build()
+                .post(new RequestCallback<String>() {
+                    @Override
+                    public void onSuccess(String response) {
+                        //进行具体的支付
+                        final int orderId = JSON.parseObject(response).getInteger("result");
+                        FastPay.create( getProxyActivity() )
+                                .setPayResultListener(ShoppingFragment.this)
+                                .setOrderId(orderId)
+                                .showPayDialog();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void addSubscription(Subscription subscription) {
+
+                    }
+                });
+
+    }
+
+    @Override
+    public void onPaySuccess() {
+
+    }
+
+    @Override
+    public void onPaying() {
+
+    }
+
+    @Override
+    public void onPayFail() {
+
+    }
+
+    @Override
+    public void onPayCancel() {
+
+    }
+
+    @Override
+    public void onPayConnectError() {
+
     }
 }

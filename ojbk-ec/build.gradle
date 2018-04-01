@@ -48,7 +48,5 @@ dependencies {
     //ButterKnife依赖
     implementation 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-
-
-
+    implementation files('libs/alipaySdk-20161222.jar')
 }

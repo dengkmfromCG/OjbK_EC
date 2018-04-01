@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="section_margin_left">5dp</dimen>
+    <dimen name="gl_item_margin_left">5dp</dimen>
+    <dimen name="section_margin_right">5dp</dimen>
+    <dimen name="gl_item_margin_right">5dp</dimen>
+
+    <dimen name="default_section_h">20dp</dimen>
+    <dimen name="default_gl_item_h">40dp</dimen>
+
+    <dimen name="section_tv_size">20sp</dimen>
+    <dimen name="gl_title_tv_size">24sp</dimen>
+    <dimen name="gl_description_tv_size">20sp</dimen>
+
+</resources>

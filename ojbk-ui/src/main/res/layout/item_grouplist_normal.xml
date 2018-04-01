@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.AppCompatTextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_gl_title_normal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/default_gl_item_h"
+    android:textColor="@color/gl_tv_content"
+    android:textSize="@dimen/gl_title_tv_size"
+    android:gravity="center|left"
+    android:layout_marginLeft="@dimen/gl_item_margin_left">
+
+</android.support.v7.widget.AppCompatTextView>
