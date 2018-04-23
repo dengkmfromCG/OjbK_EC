@@ -31,4 +31,15 @@
         <attr name="civ_border_overlay" format="boolean"/>
     </declare-styleable>
 
+
+    <!--AutoPhotoView-->
+    <declare-styleable name="camera_flow_recycler_view">
+        <!--允许添加的最大照片个数,默认为 9-->
+        <attr name="max_count" format="integer" />
+        <!--一行最多的张数,默认为 3-->
+        <attr name="max_count_one_line" format="integer"/>
+        <attr name="img_width" format="integer"/>
+        <attr name="img_height" format="integer"/>
+    </declare-styleable>
+
 </resources>

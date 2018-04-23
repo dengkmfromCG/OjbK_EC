@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 
 import com.gdut.dkmfromcg.ojbk_ec.fragments.discover.DiscoverFragment;
 import com.gdut.dkmfromcg.ojbk_ec.fragments.home.HomeFragment;
-import com.gdut.dkmfromcg.ojbk_ec.fragments.mine.MineFragment;
+import com.gdut.dkmfromcg.ojbk_ec.fragments.mine.view.MineFragment;
 import com.gdut.dkmfromcg.ojbk_ec.fragments.shopping.ShoppingFragment;
 import com.gdut.dkmfromcg.ojbk_ec.fragments.sort.SortFragment;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;

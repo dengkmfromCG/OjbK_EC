@@ -39,6 +39,9 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.22'
     implementation 'com.choices.divider:RecyclerView_Divider:1.0.0'
+    // fragmentation 依赖
+    implementation 'me.yokeyword:fragmentation:1.0.3'
+    implementation 'me.yokeyword:fragmentation-swipeback:1.0.3'
     //轮播图 依赖
     implementation 'com.bigkoo:convenientbanner:2.0.5'
     implementation 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
