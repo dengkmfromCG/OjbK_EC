@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:text="请选择图片来源"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:textColor="#9E9E9E"
+        android:textSize="12sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:gravity="center" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/photodialog_tv_take"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:text="照相机"
+        android:textColor="#F50057"
+        android:textSize="20sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:gravity="center" />
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/photodialog_tv_native"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:text="本地"
+        android:textColor="#2196F3"
+        android:textSize="20sp"/>
+
+
+
+
+</android.support.v7.widget.LinearLayoutCompat>

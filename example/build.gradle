@@ -30,7 +30,7 @@ dependencies {
     //导入的其他Module
     implementation project(':ojbk-annotations')
     annotationProcessor project(':ojbk-compiler')
-    implementation project(':ojbk-core')
+    implementation project(':common_lib')
     implementation project(':ojbk-ui')
     implementation project(':ojbk-ec')
     //Android.support包

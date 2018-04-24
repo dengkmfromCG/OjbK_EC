@@ -1,1 +1,1 @@
-include ':example', ':ojbk-annotations', ':ojbk-compiler', ':ojbk-core', ':ojbk-ec', ':ojbk-ui'
+include ':example', ':ojbk-annotations', ':ojbk-compiler', ':common_lib', ':ojbk-ec', ':ojbk-ui', ':launcher'
