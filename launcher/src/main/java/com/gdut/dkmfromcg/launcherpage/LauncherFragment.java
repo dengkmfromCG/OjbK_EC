@@ -10,8 +10,8 @@ import android.view.View;
 
 import com.gdut.dkmfromcg.launcherpage.timer.BaseTimerTask;
 import com.gdut.dkmfromcg.launcherpage.timer.ITimerListener;
-import com.gdut.dkmfromcg.ojkb.app.AccountManager;
-import com.gdut.dkmfromcg.ojkb.app.IUserChecker;
+import com.gdut.dkmfromcg.ojkb.app.sign.AccountManager;
+import com.gdut.dkmfromcg.ojkb.app.sign.IUserChecker;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
 
 import java.text.MessageFormat;

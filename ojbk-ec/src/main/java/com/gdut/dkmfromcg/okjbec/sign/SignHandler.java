@@ -1,6 +1,6 @@
 package com.gdut.dkmfromcg.okjbec.sign;
 
-import com.gdut.dkmfromcg.ojkb.app.AccountManager;
+import com.gdut.dkmfromcg.ojkb.app.sign.AccountManager;
 
 /**
  * Created by dkmFromCG on 2018/3/14.

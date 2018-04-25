@@ -3,7 +3,8 @@ package com.gdut.dkmfromcg.ojbk_ec.app;
 import android.app.Application;
 
 
-import com.gdut.dkmfromcg.ojkb.app.DKM;
+import com.gdut.dkmfromcg.ojkb.app.BaseApp;
+import com.gdut.dkmfromcg.ojkb.util.config.Configs;
 import com.gdut.dkmfromcg.ojbk_ui.icon.FontEcModule;
 import com.joanzapata.iconify.Iconify;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
@@ -13,19 +14,14 @@ import com.joanzapata.iconify.fonts.FontAwesomeModule;
  * function:
  */
 
-public class ExampleApp extends Application {
+public class ExampleApp extends BaseApp {
 
     @Override
     public void onCreate() {
         super.onCreate();
-        DKM.init(this)
-                .putApiHost("https://www.easy-mock.com/")
-                .withWeChatAppId("your wechat appId")
-                .withWeChatAppSecret("your wechat appSecret")
-                .configure();
-
 
         Iconify.with(new FontAwesomeModule())
         .with(new FontEcModule());
+
     }
 }

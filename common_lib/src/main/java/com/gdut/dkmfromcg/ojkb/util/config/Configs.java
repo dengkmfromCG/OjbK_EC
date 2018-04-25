@@ -1,20 +1,18 @@
-package com.gdut.dkmfromcg.ojkb.app;
+package com.gdut.dkmfromcg.ojkb.util.config;
 
 import android.content.Context;
 import android.os.Handler;
-
-import java.util.WeakHashMap;
 
 /**
  * Created by dkmFromCG on 2018/3/8.
  * function:
  */
 
-public class DKM {
+public class Configs {
 
     public static Configurator init(Context context){
         Configurator.getInstance()
-                .getDKM_CONFIGS()
+                .getAPP_CONFIGS()
                 .put(ConfigType.APPLICATION_CONTEXT,context.getApplicationContext());
         return Configurator.getInstance();
     }
@@ -32,7 +30,7 @@ public class DKM {
     }
 
 
-    private static Configurator getConfigurator() {
+    public static Configurator getConfigurator() {
         return Configurator.getInstance();
     }
 }

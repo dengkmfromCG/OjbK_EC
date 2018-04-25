@@ -1,4 +1,4 @@
-package com.gdut.dkmfromcg.ojkb.app;
+package com.gdut.dkmfromcg.ojkb.app.sign;
 
 /**
  * Created by dkmFromCG on 2018/3/14.

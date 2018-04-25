@@ -1,8 +1,6 @@
 /*这里的ext是必须的*/
 ext {
 
-    isAlone = true //false:作为Lib组件存在， true:作为application存在
-
     //  各个组件版本号的统一管理
     android = [
             compileSdkVersion: 26,

@@ -8,8 +8,8 @@ import android.view.View;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.gdut.dkmfromcg.launcherpage.banner.LocalImageBannerCreator;
-import com.gdut.dkmfromcg.ojkb.app.AccountManager;
-import com.gdut.dkmfromcg.ojkb.app.IUserChecker;
+import com.gdut.dkmfromcg.ojkb.app.sign.AccountManager;
+import com.gdut.dkmfromcg.ojkb.app.sign.IUserChecker;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
 import com.gdut.dkmfromcg.ojkb.util.storage.PreferenceTool;
 
@@ -36,7 +36,7 @@ public class LauncherScrollFragment extends ProxyFragment implements OnItemClick
 
     @Override
     public Object setLayout() {
-        mConvenientBanner = new ConvenientBanner<>(getActivity());
+        mConvenientBanner = new ConvenientBanner<>(getContext());
         return mConvenientBanner;
     }
 

@@ -5,7 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.gdut.dkmfromcg.ojbk_ec.fragments.home.model.HomeDataConverter;
 import com.gdut.dkmfromcg.ojbk_ec.fragments.home.model.PagingBean;
 import com.gdut.dkmfromcg.ojbk_ui.recycler.data.DataConverter;
-import com.gdut.dkmfromcg.ojkb.app.DKM;
+import com.gdut.dkmfromcg.ojkb.util.config.Configs;
 import com.gdut.dkmfromcg.ojkb.net.RestClient;
 import com.gdut.dkmfromcg.ojkb.net.callback.RequestCallback;
 
@@ -78,7 +78,7 @@ public class HomeFragmentPresenter implements IContract.Presenter {
         if (mView.getAdapterDataSize() < pageSize || currentCount >= total) {
             mView.adapterLoadMoreEnd();
         } else {
-            DKM.getHandler().postDelayed(new Runnable() {
+            Configs.getHandler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     RestClient.builder()
@@ -111,7 +111,7 @@ public class HomeFragmentPresenter implements IContract.Presenter {
 
     @Override
     public void refreshData() {
-        DKM.getHandler().postDelayed(new Runnable() {
+        Configs.getHandler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 //刷新数据

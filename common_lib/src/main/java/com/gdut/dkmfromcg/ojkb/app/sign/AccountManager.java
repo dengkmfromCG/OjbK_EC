@@ -1,4 +1,4 @@
-package com.gdut.dkmfromcg.ojkb.app;
+package com.gdut.dkmfromcg.ojkb.app.sign;
 
 import com.gdut.dkmfromcg.ojkb.util.storage.PreferenceTool;
 

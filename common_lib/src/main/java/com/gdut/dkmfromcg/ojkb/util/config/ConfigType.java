@@ -1,4 +1,4 @@
-package com.gdut.dkmfromcg.ojkb.app;
+package com.gdut.dkmfromcg.ojkb.util.config;
 
 /**
  * Created by dkmFromCG on 2018/3/8.

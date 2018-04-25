@@ -3,11 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OjbK_EC.iml" filepath="$PROJECT_DIR$/OjbK_EC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/common_lib/ojbk-core.iml" filepath="$PROJECT_DIR$/common_lib/ojbk-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common_lib/common_lib.iml" filepath="$PROJECT_DIR$/common_lib/common_lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/example/example.iml" filepath="$PROJECT_DIR$/example/example.iml" />
       <module fileurl="file://$PROJECT_DIR$/launcher/launcher.iml" filepath="$PROJECT_DIR$/launcher/launcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/ojbk-annotations/ojbk-annotations.iml" filepath="$PROJECT_DIR$/ojbk-annotations/ojbk-annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/ojbk-compiler/ojbk-compiler.iml" filepath="$PROJECT_DIR$/ojbk-compiler/ojbk-compiler.iml" />
+      <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\common_lib\ojbk-core.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\common_lib\ojbk-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/ojbk-ec/ojbk-ec.iml" filepath="$PROJECT_DIR$/ojbk-ec/ojbk-ec.iml" />
       <module fileurl="file://$PROJECT_DIR$/ojbk-ui/ojbk-ui.iml" filepath="$PROJECT_DIR$/ojbk-ui/ojbk-ui.iml" />
       <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\ojbk-annotations\ojkb-annotations.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\ojbk-annotations\ojkb-annotations.iml" />

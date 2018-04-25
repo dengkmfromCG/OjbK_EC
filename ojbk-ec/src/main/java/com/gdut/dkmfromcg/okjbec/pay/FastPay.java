@@ -12,8 +12,8 @@ import android.view.WindowManager;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.gdut.dkmfromcg.ojkb.app.ConfigType;
-import com.gdut.dkmfromcg.ojkb.app.DKM;
+import com.gdut.dkmfromcg.ojkb.util.config.ConfigType;
+import com.gdut.dkmfromcg.ojkb.util.config.Configs;
 import com.gdut.dkmfromcg.ojkb.net.RestClient;
 import com.gdut.dkmfromcg.ojkb.net.callback.RequestCallback;
 import com.gdut.dkmfromcg.okjbec.R;
@@ -93,7 +93,7 @@ public class FastPay implements View.OnClickListener {
     private void weChatPay(int orderId) {
         final String weChatPrePayUrl = "你的服务端微信预支付地址" + orderId;
         final IWXAPI iwxapi = DkmWeChat.getInstance().getWXAPI();
-        final String appId = DKM.getConfiguration(ConfigType.WE_CHAT_APP_ID);
+        final String appId = Configs.getConfiguration(ConfigType.WE_CHAT_APP_ID);
         iwxapi.registerApp(appId);
         RestClient.builder()
                 .url(weChatPrePayUrl)
