@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.gdut.dkmfromcg.launcherpage.banner.LocalImageBannerCreator;
+import com.gdut.dkmfromcg.launcherpage.tag.OnLauncherFinishTag;
+import com.gdut.dkmfromcg.launcherpage.tag.ScrollLauncherTag;
 import com.gdut.dkmfromcg.ojkb.app.sign.AccountManager;
 import com.gdut.dkmfromcg.ojkb.app.sign.IUserChecker;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="38dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/text_single"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:textColor="@color/app_background"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:drawableLeft="@drawable/line"
+        android:drawableRight="@drawable/line"
+        android:drawablePadding="5dp"
+        tools:text="手机配件" />
+
+</RelativeLayout>

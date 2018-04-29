@@ -1,0 +1,78 @@
+if (isModuleRun.toBoolean()){
+    apply plugin: 'com.android.application'
+}else {
+    apply plugin: 'com.android.library'
+}
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+
+    defaultConfig {
+
+        if (isModuleRun.toBoolean()){
+            applicationId "com.gdut.dkmfromcg.sortpage"
+        }
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // 集成模式下Arouter的配置，用于组件间通信的实现
+        if (!isModuleRun.toBoolean()) {
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments = [moduleName: project.getName()]
+                }
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions{
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            if (isModuleRun.toBoolean()){
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+                java.srcDirs = ['src/main/java', 'src/main/module/java']
+                res.srcDirs = ['src/main/res', 'src/main/module/res']
+            }else {
+                Manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation project(':common_lib')
+    implementation rootProject.ext.dependencies["fragmentation"]
+    implementation rootProject.ext.dependencies["appcompat_v7"]
+    implementation rootProject.ext.dependencies["base_recycler_view_adapter_helper"]
+    //垂直 TabLayout 和 ViewPager
+    implementation 'q.rorbin:VerticalTabLayout:1.2.5'
+    implementation 'com.github.castorflex.verticalviewpager:library:19.0.1'
+    //Glide图片处理
+    compile rootProject.ext.dependencies["glide"]
+    compile rootProject.ext.dependencies["glide_okhttp3_integration"]
+    annotationProcessor rootProject.ext.dependencies["glide_compiler"]
+    if (!isModuleRun.toBoolean()) {
+        annotationProcessor rootProject.ext.dependencies.arouter_compiler
+    }
+}

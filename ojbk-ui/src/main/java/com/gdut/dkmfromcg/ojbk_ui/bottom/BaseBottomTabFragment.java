@@ -16,7 +16,7 @@ import android.view.View;
 
 import com.gdut.dkmfromcg.ojbk_ui.R;
 import com.gdut.dkmfromcg.ojbk_ui.R2;
-import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
+import com.gdut.dkmfromcg.ojkb.fragments.BaseFragment;
 import com.gdut.dkmfromcg.ojbk_ui.widget.NotSlideViewPager;
 import com.joanzapata.iconify.widget.IconTextView;
 
@@ -30,7 +30,7 @@ import butterknife.BindView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public abstract class BaseBottomTabFragment extends ProxyFragment  {
+public abstract class BaseBottomTabFragment extends BaseFragment {
 
     private static final String TAG = "BaseBottomTabFragment";
     @BindView(R2.id.view_pager)
@@ -38,12 +38,12 @@ public abstract class BaseBottomTabFragment extends ProxyFragment  {
     @BindView(R2.id.bottom_tab)
     TabLayout tabLayout;
 
-    private final LinkedHashMap<TabItemBean, ProxyFragment> ITEMS = new LinkedHashMap<>();
+    private final LinkedHashMap<TabItemBean, BaseFragment> ITEMS = new LinkedHashMap<>();
 
-    public abstract LinkedHashMap<TabItemBean, ProxyFragment> setItems(ItemBuilder builder);
+    public abstract LinkedHashMap<TabItemBean, BaseFragment> setItems(ItemBuilder builder);
 
     private final List<TabItemBean> TAB_BEANS = new ArrayList<>();
-    private final List<ProxyFragment> ITEM_Fragments = new ArrayList<>();
+    private final List<BaseFragment> ITEM_Fragments = new ArrayList<>();
 
 
     private int mIndexFragment = 0; //初识化页面时,选择的页面,默认是 0,即第一个页面
@@ -92,11 +92,11 @@ public abstract class BaseBottomTabFragment extends ProxyFragment  {
             mClickedColor = setClickedColor();
         }
         final ItemBuilder builder = ItemBuilder.builder();
-        final LinkedHashMap<TabItemBean, ProxyFragment> items = setItems(builder);
+        final LinkedHashMap<TabItemBean, BaseFragment> items = setItems(builder);
         ITEMS.putAll(items);
-        for (Map.Entry<TabItemBean, ProxyFragment> item : ITEMS.entrySet()) {
+        for (Map.Entry<TabItemBean, BaseFragment> item : ITEMS.entrySet()) {
             final TabItemBean tabItemBean = item.getKey();
-            final ProxyFragment proxyFragment = item.getValue();
+            final BaseFragment proxyFragment = item.getValue();
             TAB_BEANS.add(tabItemBean);
             ITEM_Fragments.add(proxyFragment);
         }
@@ -137,9 +137,9 @@ public abstract class BaseBottomTabFragment extends ProxyFragment  {
 
     private final class PagerAdapter extends FragmentPagerAdapter {
 
-        List<ProxyFragment> mFragmentList;
+        List<BaseFragment> mFragmentList;
 
-        public PagerAdapter(FragmentManager fm, List<ProxyFragment> fragmentList) {
+        public PagerAdapter(FragmentManager fm, List<BaseFragment> fragmentList) {
             super(fm);
             this.mFragmentList = fragmentList;
         }

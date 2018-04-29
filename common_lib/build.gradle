@@ -46,6 +46,16 @@ dependencies {
     implementation rootProject.ext.dependencies["logging_interceptor"]
     //Log
     implementation rootProject.ext.dependencies["logger"]
+    //RecyclerView依赖
+    implementation rootProject.ext.dependencies["recyclerview_v7"]
+    implementation rootProject.ext.dependencies["base_recycler_view_adapter_helper"]
+    implementation rootProject.ext.dependencies["recycler_view_divider"]
+    //Google AutoValue ,provided表示在编译期间存在,apk打包完成后,是被废弃的.所以不会占用apk大小
+    provided rootProject.ext.dependencies["auto_value"]
+    annotationProcessor rootProject.ext.dependencies["auto_value"]
+    //iconText
+    implementation rootProject.ext.dependencies["iconify_ionicons"]
+    implementation rootProject.ext.dependencies["iconify_fontawesome"]
     //沉浸式状态栏
     implementation(rootProject.ext.dependencies["statusBarCompat"], {
         exclude group: 'com.android.support'
@@ -59,5 +69,7 @@ dependencies {
     //ButterKnife依赖
     implementation rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife_compiler"]
+    //路由通讯
+    api rootProject.ext.dependencies.arouter_api
 
 }

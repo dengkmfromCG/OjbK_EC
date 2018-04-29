@@ -1,1 +1,1 @@
-include ':example', ':ojbk-annotations', ':ojbk-compiler', ':common_lib', ':ojbk-ec', ':ojbk-ui', ':launcher'
+include ':example', ':ojbk-annotations', ':ojbk-compiler', ':common_lib', ':ojbk-ec', ':ojbk-ui', ':launcher', ':register', ':home_module', ':sort_module', ':discover_module', ':shopcart_module'

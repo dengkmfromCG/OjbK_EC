@@ -7,7 +7,7 @@
     android:clipToPadding="true"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.gdut.dkmfromcg.okjbec.sign.LogInFragment">
+    tools:context="com.gdut.dkmfromcg.okjbec.com.gdut.dkmfromcg.registerpage.LogInFragment">
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/logo"

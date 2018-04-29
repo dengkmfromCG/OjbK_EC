@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
+import com.gdut.dkmfromcg.launcherpage.tag.OnLauncherFinishTag;
 import com.gdut.dkmfromcg.launcherpage.timer.BaseTimerTask;
 import com.gdut.dkmfromcg.launcherpage.timer.ITimerListener;
 import com.gdut.dkmfromcg.ojkb.app.sign.AccountManager;

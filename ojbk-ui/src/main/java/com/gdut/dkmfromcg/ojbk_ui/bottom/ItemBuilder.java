@@ -1,6 +1,7 @@
 package com.gdut.dkmfromcg.ojbk_ui.bottom;
 
 
+import com.gdut.dkmfromcg.ojkb.fragments.BaseFragment;
 import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
 
 import java.util.LinkedHashMap;
@@ -12,23 +13,23 @@ import java.util.LinkedHashMap;
 
 public class ItemBuilder {
 
-    private final LinkedHashMap<TabItemBean, ProxyFragment> ITEMS = new LinkedHashMap<>();
+    private final LinkedHashMap<TabItemBean, BaseFragment> ITEMS = new LinkedHashMap<>();
 
     static ItemBuilder builder() {
         return new ItemBuilder();
     }
 
-    public final ItemBuilder addItem(TabItemBean bean, ProxyFragment delegate) {
+    public final ItemBuilder addItem(TabItemBean bean, BaseFragment delegate) {
         ITEMS.put(bean, delegate);
         return this;
     }
 
-    public final ItemBuilder addItems(LinkedHashMap<TabItemBean, ProxyFragment> items) {
+    public final ItemBuilder addItems(LinkedHashMap<TabItemBean, BaseFragment> items) {
         ITEMS.putAll(items);
         return this;
     }
 
-    public final LinkedHashMap<TabItemBean, ProxyFragment> build() {
+    public final LinkedHashMap<TabItemBean, BaseFragment> build() {
         return ITEMS;
     }
 
