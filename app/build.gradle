@@ -37,7 +37,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 
-    annotationProcessor project(':compiler')
+    provided project(':ec_annotations')
+    annotationProcessor project(':ec_compiler')
     implementation project(':common_lib')
     implementation project(':ojbk-ec')
     implementation rootProject.ext.dependencies["fragmentation"]

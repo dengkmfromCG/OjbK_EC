@@ -1,4 +1,4 @@
-package com.gdut.dkmfromcg.compiler;
+package com.gdut.dkmfromcg.ec_compiler;
 
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.TypeName;

@@ -1,4 +1,4 @@
-package com.gdut.dkmfromcg.compiler;
+package com.gdut.dkmfromcg.ec_compiler;
 
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.TypeName;
@@ -16,12 +16,12 @@ import javax.lang.model.util.SimpleAnnotationValueVisitor7;
  * function:
  */
 
-final class PayEntryVisitor extends SimpleAnnotationValueVisitor7<Void, Void> {
+final class EntryVisitor extends SimpleAnnotationValueVisitor7<Void, Void> {
 
     private final Filer FILER;
     private String mPackageName = null;
 
-    PayEntryVisitor(Filer FILER) {
+    EntryVisitor(Filer FILER) {
         this.FILER = FILER;
     }
 
@@ -39,14 +39,14 @@ final class PayEntryVisitor extends SimpleAnnotationValueVisitor7<Void, Void> {
 
     private void generateJavaCode(TypeMirror typeMirror) {
         final TypeSpec targetActivity =
-                TypeSpec.classBuilder("WXPayEntryActivity")
+                TypeSpec.classBuilder("WXEntryActivity")
                         .addModifiers(Modifier.PUBLIC)
                         .addModifiers(Modifier.FINAL)
                         .superclass(TypeName.get(typeMirror))
                         .build();
 
         final JavaFile javaFile = JavaFile.builder(mPackageName + ".wxapi", targetActivity)
-                .addFileComment("微信支付入口文件")
+                .addFileComment("微信入口文件")
                 .build();
         try {
             javaFile.writeTo(FILER);

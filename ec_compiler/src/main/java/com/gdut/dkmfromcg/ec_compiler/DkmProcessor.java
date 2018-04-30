@@ -1,4 +1,4 @@
-package com.gdut.dkmfromcg.compiler;
+package com.gdut.dkmfromcg.ec_compiler;
 
 import com.gdut.dkmfromcg.annotations.AppRegisterGenerator;
 import com.gdut.dkmfromcg.annotations.EntryGenerator;

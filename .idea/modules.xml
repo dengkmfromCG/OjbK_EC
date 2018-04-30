@@ -3,21 +3,26 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/OjbK_EC.iml" filepath="$PROJECT_DIR$/OjbK_EC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/annotations/ojbk-annotations.iml" filepath="$PROJECT_DIR$/annotations/ojbk-annotations.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/example.iml" filepath="$PROJECT_DIR$/app/example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/common_lib/common_lib.iml" filepath="$PROJECT_DIR$/common_lib/common_lib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/compiler/ojbk-compiler.iml" filepath="$PROJECT_DIR$/compiler/ojbk-compiler.iml" />
       <module fileurl="file://$PROJECT_DIR$/discover_module/discover_module.iml" filepath="$PROJECT_DIR$/discover_module/discover_module.iml" />
+      <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\compiler\ec-compiler.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\compiler\ec-compiler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ec_annotations/ec_annotations.iml" filepath="$PROJECT_DIR$/ec_annotations/ec_annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ec_compiler/ec_compiler.iml" filepath="$PROJECT_DIR$/ec_compiler/ec_compiler.iml" />
+      <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\app\example.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\app\example.iml" />
       <module fileurl="file://$PROJECT_DIR$/home_module/home_module.iml" filepath="$PROJECT_DIR$/home_module/home_module.iml" />
-      <module fileurl="file://$PROJECT_DIR$/launcher_module/launcher.iml" filepath="$PROJECT_DIR$/launcher_module/launcher.iml" />
+      <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\launcher_module\launcher.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\launcher_module\launcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/launcher_module/launcher_module.iml" filepath="$PROJECT_DIR$/launcher_module/launcher_module.iml" />
       <module fileurl="file://$PROJECT_DIR$/mine_module/mine_module.iml" filepath="$PROJECT_DIR$/mine_module/mine_module.iml" />
+      <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\ec_annotations\ojbk-annotations.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\ec_annotations\ojbk-annotations.iml" />
       <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\common_lib\ojbk-core.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\common_lib\ojbk-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/ojbk-ec/ojbk-ec.iml" filepath="$PROJECT_DIR$/ojbk-ec/ojbk-ec.iml" />
       <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\ojbk-annotations\ojkb-annotations.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\ojbk-annotations\ojkb-annotations.iml" />
       <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\ojbk-compiler\ojkb-compiler.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\ojbk-compiler\ojkb-compiler.iml" />
       <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\ojbk-core\okjb-core.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\ojbk-core\okjb-core.iml" />
       <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\ojbk-ec\okjb-ec.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\ojbk-ec\okjb-ec.iml" />
-      <module fileurl="file://$PROJECT_DIR$/register_module/register.iml" filepath="$PROJECT_DIR$/register_module/register.iml" />
+      <module fileurl="file://D:\java-and-android\kotlin\OjbK_EC\register_module\register.iml" filepath="D:\java-and-android\kotlin\OjbK_EC\register_module\register.iml" />
+      <module fileurl="file://$PROJECT_DIR$/register_module/register_module.iml" filepath="$PROJECT_DIR$/register_module/register_module.iml" />
       <module fileurl="file://$PROJECT_DIR$/shopcart_module/shopcart_module.iml" filepath="$PROJECT_DIR$/shopcart_module/shopcart_module.iml" />
       <module fileurl="file://$PROJECT_DIR$/sort_module/sort_module.iml" filepath="$PROJECT_DIR$/sort_module/sort_module.iml" />
     </modules>
