@@ -12,10 +12,10 @@ import android.view.WindowManager;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.gdut.dkmfromcg.ojkb.util.config.ConfigType;
-import com.gdut.dkmfromcg.ojkb.util.config.Configs;
-import com.gdut.dkmfromcg.ojkb.net.RestClient;
-import com.gdut.dkmfromcg.ojkb.net.callback.RequestCallback;
+import com.gdut.dkmfromcg.commonlib.util.config.ConfigType;
+import com.gdut.dkmfromcg.commonlib.util.config.Configs;
+import com.gdut.dkmfromcg.commonlib.net.RestClient;
+import com.gdut.dkmfromcg.commonlib.net.callback.RequestCallback;
 import com.gdut.dkmfromcg.okjbec.R;
 import com.gdut.dkmfromcg.okjbec.wechat.DkmWeChat;
 import com.tencent.mm.opensdk.modelpay.PayReq;

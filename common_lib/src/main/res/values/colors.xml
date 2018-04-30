@@ -4,4 +4,10 @@
     <color name="app_background">#1111</color>
     <color name="we_chat_black">#323232</color>
     <color name="app_main">@android:color/holo_orange_dark</color>
+
+    <!--GroupList-->
+    <color name="section_bg">#E0E0E0</color>
+    <color name="section_tv">#9E9E9E</color>
+    <color name="gl_tv_content">#323232</color>
+    <color name="gl_tv_description">#9E9E9E</color>
 </resources>

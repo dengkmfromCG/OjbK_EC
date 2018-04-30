@@ -8,16 +8,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/common_lib" />
+            <option value="$PROJECT_DIR$/compiler" />
             <option value="$PROJECT_DIR$/discover_module" />
-            <option value="$PROJECT_DIR$/example" />
             <option value="$PROJECT_DIR$/home_module" />
-            <option value="$PROJECT_DIR$/launcher" />
-            <option value="$PROJECT_DIR$/ojbk-annotations" />
-            <option value="$PROJECT_DIR$/ojbk-compiler" />
+            <option value="$PROJECT_DIR$/launcher_module" />
+            <option value="$PROJECT_DIR$/mine_module" />
             <option value="$PROJECT_DIR$/ojbk-ec" />
-            <option value="$PROJECT_DIR$/ojbk-ui" />
-            <option value="$PROJECT_DIR$/register" />
+            <option value="$PROJECT_DIR$/register_module" />
             <option value="$PROJECT_DIR$/shopcart_module" />
             <option value="$PROJECT_DIR$/sort_module" />
           </set>

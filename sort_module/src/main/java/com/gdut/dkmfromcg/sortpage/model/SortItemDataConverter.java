@@ -2,9 +2,9 @@ package com.gdut.dkmfromcg.sortpage.model;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.gdut.dkmfromcg.ojkb.recyclerview.data.ItemType;
-import com.gdut.dkmfromcg.ojkb.recyclerview.data.MultipleFields;
-import com.gdut.dkmfromcg.ojkb.recyclerview.data.MultipleItemEntity;
+import com.gdut.dkmfromcg.commonlib.recyclerview.data.ItemType;
+import com.gdut.dkmfromcg.commonlib.recyclerview.data.MultipleFields;
+import com.gdut.dkmfromcg.commonlib.recyclerview.data.MultipleItemEntity;
 
 
 import java.util.ArrayList;

@@ -12,9 +12,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
-import com.gdut.dkmfromcg.ojkb.recyclerview.MultipleViewHolder;
-import com.gdut.dkmfromcg.ojkb.recyclerview.data.MultipleFields;
-import com.gdut.dkmfromcg.ojkb.recyclerview.data.MultipleItemEntity;
+import com.gdut.dkmfromcg.commonlib.recyclerview.MultipleViewHolder;
+import com.gdut.dkmfromcg.commonlib.recyclerview.data.MultipleFields;
+import com.gdut.dkmfromcg.commonlib.recyclerview.data.MultipleItemEntity;
 import com.joanzapata.iconify.widget.IconTextView;
 
 import java.util.List;

@@ -4,9 +4,9 @@ import android.content.Context;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.gdut.dkmfromcg.homepage.HomeFragment;
-import com.gdut.dkmfromcg.ojkb.fragments.BaseFragment;
-import com.gdut.dkmfromcg.ojkb.router.HomeModule;
-import com.gdut.dkmfromcg.ojkb.router.RouterPath;
+import com.gdut.dkmfromcg.commonlib.fragments.BaseFragment;
+import com.gdut.dkmfromcg.commonlib.router.HomeModule;
+import com.gdut.dkmfromcg.commonlib.router.RouterPath;
 
 /**
  * Created by dkmFromCG on 2018/4/29.

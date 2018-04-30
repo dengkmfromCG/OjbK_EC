@@ -2,8 +2,8 @@ package com.gdut.dkmfromcg.shopcartpage.router;
 
 import android.content.Context;
 
-import com.gdut.dkmfromcg.ojkb.fragments.BaseFragment;
-import com.gdut.dkmfromcg.ojkb.router.ShopCartModule;
+import com.gdut.dkmfromcg.commonlib.fragments.BaseFragment;
+import com.gdut.dkmfromcg.commonlib.router.ShopCartModule;
 import com.gdut.dkmfromcg.shopcartpage.ShoppingFragment;
 
 /**

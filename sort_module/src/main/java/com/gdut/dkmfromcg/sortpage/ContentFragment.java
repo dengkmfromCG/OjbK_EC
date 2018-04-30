@@ -11,9 +11,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.alibaba.fastjson.JSONArray;
-import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
-import com.gdut.dkmfromcg.ojkb.recyclerview.data.MultipleItemEntity;
-import com.gdut.dkmfromcg.ojkb.recyclerview.divider.BaseDecoration;
+import com.gdut.dkmfromcg.commonlib.fragments.ProxyFragment;
+import com.gdut.dkmfromcg.commonlib.recyclerview.data.MultipleItemEntity;
+import com.gdut.dkmfromcg.commonlib.recyclerview.divider.BaseDecoration;
 import com.gdut.dkmfromcg.sortpage.model.SortItemDataConverter;
 
 

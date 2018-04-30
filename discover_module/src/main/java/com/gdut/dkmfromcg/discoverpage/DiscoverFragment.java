@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
-import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
+import com.gdut.dkmfromcg.commonlib.fragments.ProxyFragment;
 
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;

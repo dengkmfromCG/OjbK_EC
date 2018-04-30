@@ -1,7 +1,7 @@
 package com.gdut.dkmfromcg.homepage;
 
 
-import com.gdut.dkmfromcg.ojkb.recyclerview.data.DataConverter;
+import com.gdut.dkmfromcg.commonlib.recyclerview.data.DataConverter;
 
 /**
  * Created by dkmFromCG on 2018/3/20.

@@ -3,9 +3,9 @@ package com.gdut.dkmfromcg.sortpage.router;
 import android.content.Context;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.gdut.dkmfromcg.ojkb.fragments.BaseFragment;
-import com.gdut.dkmfromcg.ojkb.router.RouterPath;
-import com.gdut.dkmfromcg.ojkb.router.SortModule;
+import com.gdut.dkmfromcg.commonlib.fragments.BaseFragment;
+import com.gdut.dkmfromcg.commonlib.router.RouterPath;
+import com.gdut.dkmfromcg.commonlib.router.SortModule;
 import com.gdut.dkmfromcg.sortpage.SortFragment;
 
 /**

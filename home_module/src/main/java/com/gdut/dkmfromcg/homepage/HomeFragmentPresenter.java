@@ -4,10 +4,10 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.gdut.dkmfromcg.homepage.model.HomeDataConverter;
 import com.gdut.dkmfromcg.homepage.model.PagingBean;
-import com.gdut.dkmfromcg.ojkb.recyclerview.data.DataConverter;
-import com.gdut.dkmfromcg.ojkb.util.config.Configs;
-import com.gdut.dkmfromcg.ojkb.net.RestClient;
-import com.gdut.dkmfromcg.ojkb.net.callback.RequestCallback;
+import com.gdut.dkmfromcg.commonlib.recyclerview.data.DataConverter;
+import com.gdut.dkmfromcg.commonlib.util.config.Configs;
+import com.gdut.dkmfromcg.commonlib.net.RestClient;
+import com.gdut.dkmfromcg.commonlib.net.callback.RequestCallback;
 
 import rx.Subscription;
 

@@ -13,8 +13,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.gdut.dkmfromcg.ojkb.fragments.PermissionCheckerFragment;
-import com.gdut.dkmfromcg.ojkb.util.file.FileUtil;
+import com.gdut.dkmfromcg.commonlib.fragments.PermissionCheckerFragment;
+import com.gdut.dkmfromcg.commonlib.util.file.FileUtil;
 import com.gdut.dkmfromcg.okjbec.R;
 
 import java.io.File;

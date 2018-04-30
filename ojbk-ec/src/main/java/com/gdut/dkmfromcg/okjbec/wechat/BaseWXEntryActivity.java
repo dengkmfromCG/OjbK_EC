@@ -2,9 +2,9 @@ package com.gdut.dkmfromcg.okjbec.wechat;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.gdut.dkmfromcg.ojkb.net.RestClient;
-import com.gdut.dkmfromcg.ojkb.net.callback.RequestCallback;
-import com.gdut.dkmfromcg.ojkb.util.log.Logger;
+import com.gdut.dkmfromcg.commonlib.net.RestClient;
+import com.gdut.dkmfromcg.commonlib.net.callback.RequestCallback;
+import com.gdut.dkmfromcg.commonlib.util.log.Logger;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
 import com.tencent.mm.opensdk.modelmsg.SendAuth;

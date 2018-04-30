@@ -64,7 +64,11 @@ dependencies {
     implementation project(':common_lib')
     implementation rootProject.ext.dependencies["fragmentation"]
     implementation rootProject.ext.dependencies["appcompat_v7"]
+    implementation rootProject.ext.dependencies["recyclerview_v7"]
     implementation rootProject.ext.dependencies["base_recycler_view_adapter_helper"]
+    implementation rootProject.ext.dependencies["recycler_view_divider"]
+    implementation rootProject.ext.dependencies["fastjson"]
+    implementation rootProject.ext.dependencies["adapter_rxjava"]
     //垂直 TabLayout 和 ViewPager
     implementation 'q.rorbin:VerticalTabLayout:1.2.5'
     implementation 'com.github.castorflex.verticalviewpager:library:19.0.1'

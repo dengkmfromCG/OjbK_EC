@@ -64,7 +64,11 @@ dependencies {
     implementation project(':common_lib')
     implementation rootProject.ext.dependencies["fragmentation"]
     implementation rootProject.ext.dependencies["appcompat_v7"]
+    implementation rootProject.ext.dependencies["recyclerview_v7"]
     implementation rootProject.ext.dependencies["base_recycler_view_adapter_helper"]
+    implementation rootProject.ext.dependencies["recycler_view_divider"]
+    implementation rootProject.ext.dependencies["fastjson"]
+    implementation rootProject.ext.dependencies["adapter_rxjava"]
     //Glide图片处理
     compile rootProject.ext.dependencies["glide"]
     compile rootProject.ext.dependencies["glide_okhttp3_integration"]

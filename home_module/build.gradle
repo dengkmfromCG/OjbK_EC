@@ -66,6 +66,9 @@ dependencies {
     implementation rootProject.ext.dependencies["appcompat_v7"]
     implementation rootProject.ext.dependencies["design"]
     implementation rootProject.ext.dependencies["base_recycler_view_adapter_helper"]
+    implementation rootProject.ext.dependencies["recycler_view_divider"]
+    implementation rootProject.ext.dependencies["fastjson"]
+    implementation rootProject.ext.dependencies["adapter_rxjava"]
     //轮播图 依赖
     implementation rootProject.ext.dependencies["convenientbanner"]
     implementation rootProject.ext.dependencies["view_pager_transforms"]

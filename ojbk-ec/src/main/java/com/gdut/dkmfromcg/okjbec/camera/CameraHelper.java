@@ -1,10 +1,9 @@
 package com.gdut.dkmfromcg.okjbec.camera;
 
-import android.content.Context;
 import android.net.Uri;
 
-import com.gdut.dkmfromcg.ojkb.fragments.PermissionCheckerFragment;
-import com.gdut.dkmfromcg.ojkb.util.file.FileUtil;
+import com.gdut.dkmfromcg.commonlib.fragments.PermissionCheckerFragment;
+import com.gdut.dkmfromcg.commonlib.util.file.FileUtil;
 
 /**
  * Created by dkmFromCG on 2018/4/3.

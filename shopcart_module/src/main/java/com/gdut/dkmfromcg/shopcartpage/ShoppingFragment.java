@@ -15,11 +15,10 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
-
-import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
-import com.gdut.dkmfromcg.ojkb.net.RestClient;
-import com.gdut.dkmfromcg.ojkb.net.callback.RequestCallback;
-import com.gdut.dkmfromcg.ojkb.recyclerview.data.MultipleItemEntity;
+import com.gdut.dkmfromcg.commonlib.fragments.ProxyFragment;
+import com.gdut.dkmfromcg.commonlib.net.RestClient;
+import com.gdut.dkmfromcg.commonlib.net.callback.RequestCallback;
+import com.gdut.dkmfromcg.commonlib.recyclerview.data.MultipleItemEntity;
 import com.gdut.dkmfromcg.okjbec.pay.FastPay;
 import com.gdut.dkmfromcg.okjbec.pay.IAlPayResultListener;
 import com.joanzapata.iconify.widget.IconTextView;
@@ -28,29 +27,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
 
-import butterknife.BindView;
-import butterknife.OnClick;
 import rx.Subscription;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ShoppingFragment extends ProxyFragment implements IAlPayResultListener{
+public class ShoppingFragment extends ProxyFragment implements IAlPayResultListener {
 
 
-    @BindView(R.id.tv_shop_car_edit)
     AppCompatTextView tvShopCarEdit;
-    @BindView(R.id.rv_shop_car)
     RecyclerView rvShopCar;
-    @BindView(R.id.stub_no_item)
     ViewStubCompat stubNoItem;
-    @BindView(R.id.icon_shop_cart_select_all)
     IconTextView iconShopCartSelectAll;
-    @BindView(R.id.tv_shop_cart_total_price)
     AppCompatTextView tvShopCartTotalPrice;
-    @BindView(R.id.tv_shop_cart_pay)
     AppCompatTextView tvShopCartPay;
-    @BindView(R.id.stub_shop_cart_edit)
     ViewStubCompat stubShopCartEdit;
 
     private final int ALL_SELECTED = 1;
@@ -68,7 +58,79 @@ public class ShoppingFragment extends ProxyFragment implements IAlPayResultListe
 
     @Override
     public void onBindView(@Nullable Bundle savedInstanceState, View rootView) {
+        tvShopCarEdit = rootView.findViewById(R.id.tv_shop_car_edit);
+        rvShopCar = rootView.findViewById(R.id.rv_shop_car);
+        stubNoItem = rootView.findViewById(R.id.stub_no_item);
+        iconShopCartSelectAll = rootView.findViewById(R.id.icon_shop_cart_select_all);
+        tvShopCartTotalPrice = rootView.findViewById(R.id.tv_shop_cart_total_price);
+        tvShopCartPay = rootView.findViewById(R.id.tv_shop_cart_pay);
+        stubShopCartEdit = rootView.findViewById(R.id.stub_shop_cart_edit);
         iconShopCartSelectAll.setTag(ALL_NOT_SELECTED);
+
+        tvShopCarEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                @SuppressLint("RestrictedApi") final View stubView = stubShopCartEdit.inflate();
+                final AppCompatTextView tvDelete = stubView.findViewById(R.id.tv_delete);
+                tvDelete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        final List<MultipleItemEntity> data = mAdapter.getData();
+                        //要删除的数据
+                        final List<MultipleItemEntity> deleteEntities = new ArrayList<>();
+                        for (MultipleItemEntity entity : data) {
+                            final boolean isSelected = entity.getField(ShopCartItemFields.IS_SELECTED);
+                            if (isSelected) {
+                                deleteEntities.add(entity);
+                            }
+                        }
+                        for (MultipleItemEntity entity : deleteEntities) {
+                            int removePosition;
+                            final int entityPosition = entity.getField(ShopCartItemFields.POSITION);
+                            if (entityPosition > mCurrentCount - 1) {
+                                removePosition = entityPosition - (mTotalCount - mCurrentCount);
+                            } else {
+                                removePosition = entityPosition;
+                            }
+                            if (removePosition <= mAdapter.getItemCount()) {
+                                mAdapter.remove(removePosition);
+                                mCurrentCount = mAdapter.getItemCount();
+                                //更新数据
+                                mAdapter.notifyItemRangeChanged(removePosition, mAdapter.getItemCount());
+                            }
+                        }
+                        checkItemCount();
+
+                    }
+                });
+            }
+        });
+        iconShopCartSelectAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final int tag = (int) iconShopCartSelectAll.getTag();
+                final int itemCount = mAdapter.getItemCount();
+                if (tag == ALL_NOT_SELECTED) {
+                    iconShopCartSelectAll.setTextColor(ContextCompat.getColor(getContext(), R.color.app_main));
+                    iconShopCartSelectAll.setTag(ALL_SELECTED);
+                    mAdapter.setIsSelectedAll(true);
+                    //更新RecyclerView显示数据
+                    mAdapter.notifyItemRangeChanged(0, itemCount);
+                } else {
+                    iconShopCartSelectAll.setTextColor(Color.GRAY);
+                    iconShopCartSelectAll.setTag(ALL_NOT_SELECTED);
+                    mAdapter.setIsSelectedAll(false);
+                    //更新RecyclerView显示数据
+                    mAdapter.notifyItemRangeChanged(0, itemCount);
+                }
+            }
+        });
+        tvShopCartPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createOrder();
+            }
+        });
     }
 
     @Override
@@ -106,68 +168,6 @@ public class ShoppingFragment extends ProxyFragment implements IAlPayResultListe
     }
 
 
-    @OnClick(R.id.tv_shop_car_edit)
-    public void onTvShopCarEditClicked() {
-        @SuppressLint("RestrictedApi") final View stubView = stubShopCartEdit.inflate();
-        final AppCompatTextView tvDelete = stubView.findViewById(R.id.tv_delete);
-        tvDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final List<MultipleItemEntity> data = mAdapter.getData();
-                //要删除的数据
-                final List<MultipleItemEntity> deleteEntities = new ArrayList<>();
-                for (MultipleItemEntity entity : data) {
-                    final boolean isSelected = entity.getField(ShopCartItemFields.IS_SELECTED);
-                    if (isSelected) {
-                        deleteEntities.add(entity);
-                    }
-                }
-                for (MultipleItemEntity entity : deleteEntities) {
-                    int removePosition;
-                    final int entityPosition = entity.getField(ShopCartItemFields.POSITION);
-                    if (entityPosition > mCurrentCount - 1) {
-                        removePosition = entityPosition - (mTotalCount - mCurrentCount);
-                    } else {
-                        removePosition = entityPosition;
-                    }
-                    if (removePosition <= mAdapter.getItemCount()) {
-                        mAdapter.remove(removePosition);
-                        mCurrentCount = mAdapter.getItemCount();
-                        //更新数据
-                        mAdapter.notifyItemRangeChanged(removePosition, mAdapter.getItemCount());
-                    }
-                }
-                checkItemCount();
-
-            }
-        });
-    }
-
-    @OnClick(R.id.icon_shop_cart_select_all)
-    public void onIconShopCartSelectAllClicked() {
-        final int tag = (int) iconShopCartSelectAll.getTag();
-        final int itemCount = mAdapter.getItemCount();
-        if (tag == ALL_NOT_SELECTED) {
-            iconShopCartSelectAll.setTextColor(ContextCompat.getColor(getContext(), R.color.app_main));
-            iconShopCartSelectAll.setTag(ALL_SELECTED);
-            mAdapter.setIsSelectedAll(true);
-            //更新RecyclerView显示数据
-            mAdapter.notifyItemRangeChanged(0, itemCount);
-        } else {
-            iconShopCartSelectAll.setTextColor(Color.GRAY);
-            iconShopCartSelectAll.setTag(ALL_NOT_SELECTED);
-            mAdapter.setIsSelectedAll(false);
-            //更新RecyclerView显示数据
-            mAdapter.notifyItemRangeChanged(0, itemCount);
-        }
-
-    }
-
-    @OnClick(R.id.tv_shop_cart_pay)
-    public void onTvShopCartPayClicked() {
-        createOrder();
-    }
-
     @SuppressWarnings("RestrictedApi")
     private void checkItemCount() {
         final int count = mAdapter.getItemCount();
@@ -202,7 +202,7 @@ public class ShoppingFragment extends ProxyFragment implements IAlPayResultListe
                     public void onSuccess(String response) {
                         //进行具体的支付
                         final int orderId = JSON.parseObject(response).getInteger("result");
-                        FastPay.create( getProxyActivity() )
+                        FastPay.create(getProxyActivity())
                                 .setPayResultListener(ShoppingFragment.this)
                                 .setOrderId(orderId)
                                 .showPayDialog();

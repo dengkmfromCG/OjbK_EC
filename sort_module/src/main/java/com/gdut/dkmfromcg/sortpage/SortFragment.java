@@ -13,11 +13,11 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.alibaba.fastjson.JSONArray;
-import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
-import com.gdut.dkmfromcg.ojkb.net.RestClient;
-import com.gdut.dkmfromcg.ojkb.net.callback.RequestCallback;
-import com.gdut.dkmfromcg.ojkb.recyclerview.data.MultipleFields;
-import com.gdut.dkmfromcg.ojkb.recyclerview.data.MultipleItemEntity;
+import com.gdut.dkmfromcg.commonlib.fragments.ProxyFragment;
+import com.gdut.dkmfromcg.commonlib.net.RestClient;
+import com.gdut.dkmfromcg.commonlib.net.callback.RequestCallback;
+import com.gdut.dkmfromcg.commonlib.recyclerview.data.MultipleFields;
+import com.gdut.dkmfromcg.commonlib.recyclerview.data.MultipleItemEntity;
 import com.gdut.dkmfromcg.sortpage.model.SortDataConverter;
 
 import java.io.BufferedReader;

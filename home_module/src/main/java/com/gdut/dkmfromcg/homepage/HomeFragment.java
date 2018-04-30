@@ -12,9 +12,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
-import com.gdut.dkmfromcg.ojkb.recyclerview.data.DataConverter;
-import com.gdut.dkmfromcg.ojkb.recyclerview.divider.BaseDecoration;
+import com.gdut.dkmfromcg.commonlib.fragments.ProxyFragment;
+import com.gdut.dkmfromcg.commonlib.recyclerview.data.DataConverter;
+import com.gdut.dkmfromcg.commonlib.recyclerview.divider.BaseDecoration;
 import com.joanzapata.iconify.widget.IconTextView;
 
 

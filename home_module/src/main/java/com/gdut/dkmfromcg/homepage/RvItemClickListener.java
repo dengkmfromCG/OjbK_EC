@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
-import com.gdut.dkmfromcg.ojkb.fragments.ProxyFragment;
+import com.gdut.dkmfromcg.commonlib.fragments.ProxyFragment;
 
 /**
  * Created by dkmFromCG on 2018/3/22.

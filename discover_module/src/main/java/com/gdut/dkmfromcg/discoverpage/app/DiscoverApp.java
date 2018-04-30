@@ -3,8 +3,8 @@ package com.gdut.dkmfromcg.discoverpage.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.gdut.dkmfromcg.ojkb.app.IAppLife;
-import com.gdut.dkmfromcg.ojkb.app.IModuleConfig;
+import com.gdut.dkmfromcg.commonlib.app.IAppLife;
+import com.gdut.dkmfromcg.commonlib.app.IModuleConfig;
 
 import java.util.List;
 

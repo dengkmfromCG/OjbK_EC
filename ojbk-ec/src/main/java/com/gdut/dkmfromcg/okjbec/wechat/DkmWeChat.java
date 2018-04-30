@@ -2,8 +2,8 @@ package com.gdut.dkmfromcg.okjbec.wechat;
 
 import android.app.Activity;
 
-import com.gdut.dkmfromcg.ojkb.util.config.ConfigType;
-import com.gdut.dkmfromcg.ojkb.util.config.Configs;
+import com.gdut.dkmfromcg.commonlib.util.config.ConfigType;
+import com.gdut.dkmfromcg.commonlib.util.config.Configs;
 import com.gdut.dkmfromcg.okjbec.wechat.callbacks.IWeChatSignInCallback;
 import com.tencent.mm.opensdk.modelmsg.SendAuth;
 import com.tencent.mm.opensdk.openapi.IWXAPI;

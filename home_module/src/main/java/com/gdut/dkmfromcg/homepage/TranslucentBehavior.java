@@ -7,7 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.gdut.dkmfromcg.ojkb.recyclerview.RgbValue;
+import com.gdut.dkmfromcg.commonlib.recyclerview.RgbValue;
 
 
 /**
