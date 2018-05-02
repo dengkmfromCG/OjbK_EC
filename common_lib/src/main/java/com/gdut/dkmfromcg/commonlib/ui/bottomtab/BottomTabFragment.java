@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.gdut.dkmfromcg.commonlib.R;
 import com.gdut.dkmfromcg.commonlib.fragments.BaseFragment;
+import com.gdut.dkmfromcg.commonlib.fragments.ProxyFragment;
 import com.joanzapata.iconify.widget.IconTextView;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ import me.yokeyword.fragmentation.ISupportFragment;
  * function:
  */
 
-public abstract class BottomTabFragment extends BaseFragment implements View.OnClickListener {
+public abstract class BottomTabFragment extends ProxyFragment implements View.OnClickListener {
 
     private static final String TAG = "BottomTabFragment";
 

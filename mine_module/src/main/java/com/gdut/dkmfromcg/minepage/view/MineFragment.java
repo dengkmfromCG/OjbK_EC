@@ -21,6 +21,7 @@ import com.gdut.dkmfromcg.commonlib.ui.grouplist.Section;
 import com.gdut.dkmfromcg.commonlib.util.callback.CallbackManager;
 import com.gdut.dkmfromcg.commonlib.util.callback.CallbackType;
 import com.gdut.dkmfromcg.commonlib.util.callback.IGlobalCallback;
+import com.gdut.dkmfromcg.commonlib.util.log.Logger;
 import com.gdut.dkmfromcg.commonlib.widget.CircleImageView;
 import com.gdut.dkmfromcg.minepage.R;
 import com.gdut.dkmfromcg.minepage.camera.CameraHelper;
@@ -37,6 +38,7 @@ import java.util.List;
  */
 public class MineFragment extends ProxyFragment implements IMineView {
 
+    private static final String TAG = "MineFragment";
     CircleImageView mIvCircle = null;
 
     MinePresenterImpl mPresenter;
@@ -56,11 +58,13 @@ public class MineFragment extends ProxyFragment implements IMineView {
         mIvCircle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Logger.d(TAG,"mIvCircle on click");
                 CallbackManager.getInstance()
                         .addCallback(CallbackType.ON_CROP, new IGlobalCallback() {
                             @Override
                             public void executeCallback(@Nullable Object args) {
                                 CameraHelper.start(MineFragment.this);
+                                Logger.d(TAG,"addCallback");
                             }
                         });
                 startCameraWithCheck();

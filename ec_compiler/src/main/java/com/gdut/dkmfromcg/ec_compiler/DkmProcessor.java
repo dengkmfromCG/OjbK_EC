@@ -1,8 +1,8 @@
 package com.gdut.dkmfromcg.ec_compiler;
 
-import com.gdut.dkmfromcg.annotations.AppRegisterGenerator;
-import com.gdut.dkmfromcg.annotations.EntryGenerator;
-import com.gdut.dkmfromcg.annotations.PayEntryGenerator;
+import com.gdut.dkmfromcg.ec_annotations.AppRegisterGenerator;
+import com.gdut.dkmfromcg.ec_annotations.EntryGenerator;
+import com.gdut.dkmfromcg.ec_annotations.PayEntryGenerator;
 import com.google.auto.service.AutoService;
 
 import java.lang.annotation.Annotation;

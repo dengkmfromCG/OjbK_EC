@@ -75,6 +75,8 @@ dependencies {
     implementation rootProject.ext.dependencies["view_pager_transforms"]
 
     if (!isModuleRun.toBoolean()) {
+        //如果不用再该module中引入该Module,可直接通过Arouter通信
+        //api project(':register_module')
         annotationProcessor rootProject.ext.dependencies.arouter_compiler
     }
 }

@@ -9,7 +9,7 @@ import java.util.WeakHashMap;
 
 public class CallbackManager {
 
-    private static final WeakHashMap<Object, IGlobalCallback> CALLBACKS = new WeakHashMap<>();
+    public static final WeakHashMap<Object, IGlobalCallback> CALLBACKS = new WeakHashMap<>();
 
     private static class Holder {
         private static final CallbackManager INSTANCE = new CallbackManager();

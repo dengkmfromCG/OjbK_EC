@@ -49,7 +49,7 @@ android {
                 java.srcDirs = ['src/main/java', 'src/main/module/java']
                 res.srcDirs = ['src/main/res', 'src/main/module/res']
             }else {
-                Manifest.srcFile 'src/main/AndroidManifest.xml'
+                manifest.srcFile 'src/main/AndroidManifest.xml'
             }
         }
     }

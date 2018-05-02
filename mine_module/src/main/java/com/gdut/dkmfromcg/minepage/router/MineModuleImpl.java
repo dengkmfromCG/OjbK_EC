@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.gdut.dkmfromcg.commonlib.fragments.BaseFragment;
-import com.gdut.dkmfromcg.commonlib.router.MineModule;
+import com.gdut.dkmfromcg.commonlib.router.IMineModule;
 import com.gdut.dkmfromcg.commonlib.router.RouterPath;
 import com.gdut.dkmfromcg.minepage.view.MineFragment;
 
@@ -13,7 +13,7 @@ import com.gdut.dkmfromcg.minepage.view.MineFragment;
  * function:
  */
 @Route(path = RouterPath.MINE_MODULE)
-public class MineModuleImpl implements MineModule {
+public class MineModuleImpl implements IMineModule {
     @Override
     public BaseFragment getMineFragment() {
         return new MineFragment();

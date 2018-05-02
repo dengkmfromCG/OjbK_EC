@@ -5,7 +5,7 @@ import android.content.Context;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.gdut.dkmfromcg.discoverpage.DiscoverFragment;
 import com.gdut.dkmfromcg.commonlib.fragments.BaseFragment;
-import com.gdut.dkmfromcg.commonlib.router.DiscoverModule;
+import com.gdut.dkmfromcg.commonlib.router.IDiscoverModule;
 import com.gdut.dkmfromcg.commonlib.router.RouterPath;
 
 /**
@@ -13,7 +13,7 @@ import com.gdut.dkmfromcg.commonlib.router.RouterPath;
  * function:
  */
 @Route(path = RouterPath.DISCOVER_MODULE)
-public class DiscoverModuleImpl implements DiscoverModule {
+public class DiscoverModuleImpl implements IDiscoverModule {
     @Override
     public void init(Context context) {
 

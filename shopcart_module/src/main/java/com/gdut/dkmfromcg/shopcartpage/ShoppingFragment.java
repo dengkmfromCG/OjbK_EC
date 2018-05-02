@@ -18,9 +18,9 @@ import com.alibaba.fastjson.JSON;
 import com.gdut.dkmfromcg.commonlib.fragments.ProxyFragment;
 import com.gdut.dkmfromcg.commonlib.net.RestClient;
 import com.gdut.dkmfromcg.commonlib.net.callback.RequestCallback;
+import com.gdut.dkmfromcg.commonlib.pay.FastPay;
+import com.gdut.dkmfromcg.commonlib.pay.IAlPayResultListener;
 import com.gdut.dkmfromcg.commonlib.recyclerview.data.MultipleItemEntity;
-import com.gdut.dkmfromcg.okjbec.pay.FastPay;
-import com.gdut.dkmfromcg.okjbec.pay.IAlPayResultListener;
 import com.joanzapata.iconify.widget.IconTextView;
 
 import java.util.ArrayList;

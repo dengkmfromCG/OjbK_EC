@@ -5,7 +5,7 @@ import android.content.Context;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.gdut.dkmfromcg.commonlib.fragments.BaseFragment;
 import com.gdut.dkmfromcg.commonlib.router.RouterPath;
-import com.gdut.dkmfromcg.commonlib.router.SortModule;
+import com.gdut.dkmfromcg.commonlib.router.ISortModule;
 import com.gdut.dkmfromcg.sortpage.SortFragment;
 
 /**
@@ -13,7 +13,7 @@ import com.gdut.dkmfromcg.sortpage.SortFragment;
  * function:
  */
 @Route(path = RouterPath.SORT_MODULE)
-public class SortModuleImpl implements SortModule {
+public class SortModuleImpl implements ISortModule {
     @Override
     public void init(Context context) {
 

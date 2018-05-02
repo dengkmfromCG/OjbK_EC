@@ -1,4 +1,4 @@
-package com.gdut.dkmfromcg.annotations;
+package com.gdut.dkmfromcg.ec_annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

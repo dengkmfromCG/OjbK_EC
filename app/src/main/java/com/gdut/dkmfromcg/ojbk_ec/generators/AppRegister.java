@@ -1,8 +1,8 @@
 package com.gdut.dkmfromcg.ojbk_ec.generators;
 
 
-import com.gdut.dkmfromcg.okjbec.wechat.templates.AppRegisterTemplate;
-import com.gdut.dkmfromcg.annotations.AppRegisterGenerator;
+import com.gdut.dkmfromcg.commonlib.wechat.templates.AppRegisterTemplate;
+import com.gdut.dkmfromcg.ec_annotations.AppRegisterGenerator;
 
 /**
  * Created by 傅令杰 on 2017/4/22

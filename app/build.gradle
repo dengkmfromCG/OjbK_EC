@@ -32,25 +32,24 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
     provided project(':ec_annotations')
     annotationProcessor project(':ec_compiler')
     implementation project(':common_lib')
-    implementation project(':ojbk-ec')
     implementation rootProject.ext.dependencies["fragmentation"]
     implementation rootProject.ext.dependencies["appcompat_v7"]
-
     if (!isModuleRun.toBoolean()) {
-        api project(':launcher')
+        //作为每个Module之间的中转站,其他ModuleApp之间相互跳转时,就不用再相互依赖
+        api project(':launcher_module')
+        api project(':register_module')
+        api project(':home_module')
+        api project(':sort_module')
+        api project(':discover_module')
+        api project(':shopcart_module')
+        api project(':mine_module')
         annotationProcessor rootProject.ext.dependencies.arouter_compiler
     }
-
-
-
-
-
 }

@@ -26,6 +26,10 @@ import android.widget.Toast;
 import com.gdut.dkmfromcg.commonlib.app.sign.ISignListener;
 import com.gdut.dkmfromcg.commonlib.fragments.ProxyFragment;
 import com.gdut.dkmfromcg.commonlib.util.animator.RxAnimationTool;
+import com.gdut.dkmfromcg.commonlib.util.log.Logger;
+import com.gdut.dkmfromcg.commonlib.wechat.DkmWeChat;
+import com.gdut.dkmfromcg.commonlib.wechat.callbacks.IWeChatSignInCallback;
+import com.gdut.dkmfromcg.registerpage.app.RegisterApp;
 /*import com.gdut.dkmfromcg.okjbec.wechat.DkmWeChat;
 import com.gdut.dkmfromcg.okjbec.wechat.callbacks.IWeChatSignInCallback;*/
 
@@ -82,7 +86,7 @@ public class LogInFragment extends ProxyFragment {
         regist = rootView.findViewById(R.id.regist);
         forgetPassword = rootView.findViewById(R.id.forget_password);
         content = rootView.findViewById(R.id.content);
-        scrollView = rootView.findViewById(R.id.scroll);
+        scrollView = rootView.findViewById(R.id.scrollView);
         tryUse = rootView.findViewById(R.id.try_use);
         initEvent();
         initView();
@@ -166,7 +170,7 @@ public class LogInFragment extends ProxyFragment {
         tryUse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getSupportDelegate().startWithPop(RegisterApp.getAppModule().getMainFragment());
             }
         });
     }
@@ -292,13 +296,13 @@ public class LogInFragment extends ProxyFragment {
 
     //微信登录时,调用该方法...并且要传入 WeChat的appId和appSecret
     private void weChatSignIn() {
-        /*DkmWeChat.getInstance().onSignSuccess(new IWeChatSignInCallback() {
+        DkmWeChat.getInstance().onSignSuccess(new IWeChatSignInCallback() {
             @Override
             public void onSignInSuccess(String userInfo) {
                 //登陆成功的回调
                 Logger.d("useInfo: ", userInfo);
             }
-        }).signIn();//signIn方法内进行请求*/
+        }).signIn();//signIn方法内进行请求
     }
 
 }

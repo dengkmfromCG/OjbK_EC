@@ -8,12 +8,13 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
-import com.gdut.dkmfromcg.launcherpage.tag.OnLauncherFinishTag;
-import com.gdut.dkmfromcg.launcherpage.timer.BaseTimerTask;
-import com.gdut.dkmfromcg.launcherpage.timer.ITimerListener;
 import com.gdut.dkmfromcg.commonlib.app.sign.AccountManager;
 import com.gdut.dkmfromcg.commonlib.app.sign.IUserChecker;
 import com.gdut.dkmfromcg.commonlib.fragments.ProxyFragment;
+import com.gdut.dkmfromcg.commonlib.util.log.Logger;
+import com.gdut.dkmfromcg.launcherpage.tag.OnLauncherFinishTag;
+import com.gdut.dkmfromcg.launcherpage.timer.BaseTimerTask;
+import com.gdut.dkmfromcg.launcherpage.timer.ITimerListener;
 
 import java.text.MessageFormat;
 import java.util.Timer;
@@ -23,6 +24,7 @@ import java.util.Timer;
  */
 public class LauncherFragment extends ProxyFragment implements ITimerListener {
 
+    private static final String TAG = "LauncherFragment";
 
     AppCompatTextView mTvTimer = null;
 
@@ -93,7 +95,9 @@ public class LauncherFragment extends ProxyFragment implements ITimerListener {
 
             @Override
             public void onNotSingIn() {
+                Logger.d(TAG,"用户没有登录");
                 if (mILauncherListener != null) {
+                    Logger.d(TAG,"mILauncherListener != null");
                     mILauncherListener.onLauncherFinish(OnLauncherFinishTag.NOT_SIGNED);
                 }
             }

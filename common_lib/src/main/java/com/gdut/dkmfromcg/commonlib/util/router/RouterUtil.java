@@ -9,7 +9,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 
 public class RouterUtil {
 
-    public static <T> T navigation(String path){
+    public static <T> T navigation(String path) {
         return (T) ARouter.getInstance().build(path).navigation();
     }
 }

@@ -50,7 +50,7 @@ android {
                 java.srcDirs = ['src/main/java', 'src/main/module/java']
                 res.srcDirs = ['src/main/res', 'src/main/module/res']
             }else {
-                Manifest.srcFile 'src/main/AndroidManifest.xml'
+                manifest.srcFile 'src/main/AndroidManifest.xml'
             }
         }
     }
@@ -64,6 +64,7 @@ dependencies {
     implementation project(':common_lib')
     implementation rootProject.ext.dependencies["fragmentation"]
     implementation rootProject.ext.dependencies["appcompat_v7"]
+    implementation rootProject.ext.dependencies["recyclerview_v7"]
     implementation rootProject.ext.dependencies["base_recycler_view_adapter_helper"]
     implementation rootProject.ext.dependencies["iconify_ionicons"]
     //图片剪裁

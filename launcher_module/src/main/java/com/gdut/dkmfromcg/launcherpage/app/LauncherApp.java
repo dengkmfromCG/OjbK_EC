@@ -5,9 +5,10 @@ import android.content.Context;
 
 import com.gdut.dkmfromcg.commonlib.app.IAppLife;
 import com.gdut.dkmfromcg.commonlib.app.IModuleConfig;
-import com.gdut.dkmfromcg.commonlib.router.AppModule;
-import com.gdut.dkmfromcg.commonlib.router.RegisterModule;
+import com.gdut.dkmfromcg.commonlib.router.IAppModule;
+import com.gdut.dkmfromcg.commonlib.router.IRegisterModule;
 import com.gdut.dkmfromcg.commonlib.router.RouterPath;
+import com.gdut.dkmfromcg.commonlib.util.log.Logger;
 import com.gdut.dkmfromcg.commonlib.util.router.RouterUtil;
 
 import java.util.List;
@@ -22,20 +23,20 @@ public class LauncherApp implements IAppLife, IModuleConfig {
     private static final String TAG = "LauncherApp";
 
 
-    private static RegisterModule registerModule = null;
-    private static AppModule appModule = null;
+    private static IRegisterModule registerModule = null;
+    private static IAppModule appModule = null;
 
-    public static RegisterModule getRegisterModule() {
+    public static IRegisterModule getRegisterModule() {
         return registerModule;
     }
 
-    public static AppModule getAppModule() {
+    public static IAppModule getAppModule() {
         return appModule;
     }
 
     @Override
     public void attachBaseContext(Context tx) {
-
+        Logger.d(TAG,"attachBaseContext");
     }
 
     @Override
@@ -44,9 +45,9 @@ public class LauncherApp implements IAppLife, IModuleConfig {
          * 为该Module设置 theme
          * application.setTheme();
          */
-
+        Logger.d(TAG,"onCreate");
         //做一些该Module内的数据初始化,比如
-        registerModule = RouterUtil.navigation(RouterPath.REGISTER);
+        registerModule=RouterUtil.navigation(RouterPath.REGISTER);
         appModule = RouterUtil.navigation(RouterPath.APP);
     }
 

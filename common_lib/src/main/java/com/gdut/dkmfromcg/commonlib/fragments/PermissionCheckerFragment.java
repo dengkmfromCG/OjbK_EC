@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import com.gdut.dkmfromcg.commonlib.util.callback.CallbackManager;
 import com.gdut.dkmfromcg.commonlib.util.callback.CallbackType;
 import com.gdut.dkmfromcg.commonlib.util.callback.IGlobalCallback;
+import com.gdut.dkmfromcg.commonlib.util.log.Logger;
 
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.RuntimePermissions;
@@ -18,11 +19,13 @@ import permissions.dispatcher.RuntimePermissions;
 @RuntimePermissions
 public abstract class PermissionCheckerFragment extends BaseFragment {
 
+    private static final String TAG = "PermissionCheckerFragme";
     //不是直接调用方法
     @NeedsPermission({Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE})
     void startCamera() {
         final IGlobalCallback callback=CallbackManager.getInstance().getCallback(CallbackType.ON_CROP);
         if (callback!=null){
+            Logger.d(TAG,"IGlobalCallback != null");
             callback.executeCallback(null);
         }
     }

@@ -29,6 +29,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation files('libs/alipaySdk-20161222.jar')
     //Android.support
     implementation rootProject.ext.dependencies["support_v4"]
     implementation rootProject.ext.dependencies["appcompat_v7"]
@@ -70,10 +71,15 @@ dependencies {
         exclude module: "support-v13"
     }
     annotationProcessor rootProject.ext.dependencies["permissionsdispatcher_processor"]
+
+    //微信依赖（包含统计）
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.3.4'
+
     //ButterKnife依赖
     implementation rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife_compiler"]
     //路由通讯
     api rootProject.ext.dependencies.arouter_api
+
 
 }
