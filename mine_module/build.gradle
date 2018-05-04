@@ -1,6 +1,6 @@
-if (isModuleRun.toBoolean()){
+if (isModuleRun.toBoolean()) {
     apply plugin: 'com.android.application'
-}else {
+} else {
     apply plugin: 'com.android.library'
 }
 
@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
 
-        if (isModuleRun.toBoolean()){
+        if (isModuleRun.toBoolean()) {
             applicationId "com.gdut.dkmfromcg.minepage"
         }
         minSdkVersion rootProject.ext.android.minSdkVersion
@@ -38,18 +38,18 @@ android {
         }
     }
 
-    compileOptions{
+    compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
     sourceSets {
         main {
-            if (isModuleRun.toBoolean()){
+            if (isModuleRun.toBoolean()) {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
                 java.srcDirs = ['src/main/java', 'src/main/module/java']
                 res.srcDirs = ['src/main/res', 'src/main/module/res']
-            }else {
+            } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
             }
         }
@@ -58,6 +58,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:support-v4:26.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

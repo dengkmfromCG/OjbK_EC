@@ -51,7 +51,7 @@ public class LauncherActivity extends ProxyActivity implements ILauncherListener
                 getSupportDelegate().startWithPop(mainFragment);
                 break;
             case NOT_SIGNED:
-                getSupportDelegate().startWithPop(logInFragment);
+                getSupportDelegate().start(logInFragment);
                 break;
             default:
                 break;

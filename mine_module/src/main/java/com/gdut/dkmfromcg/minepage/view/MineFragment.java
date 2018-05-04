@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -68,6 +69,12 @@ public class MineFragment extends ProxyFragment implements IMineView {
                             }
                         });
                 startCameraWithCheck();
+            }
+        });
+        rootView.findViewById(R.id.ll_evaluate).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportDelegate().start(new EvaluateFragment());
             }
         });
     }

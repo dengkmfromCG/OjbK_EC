@@ -54,6 +54,8 @@ dependencies {
     //Google AutoValue ,provided表示在编译期间存在,apk打包完成后,是被废弃的.所以不会占用apk大小
     provided rootProject.ext.dependencies["auto_value"]
     annotationProcessor rootProject.ext.dependencies["auto_value"]
+    //Matisse知乎图片处理
+    implementation rootProject.ext.dependencies["matisse"]
     //Glide图片处理
     compile rootProject.ext.dependencies["glide"]
     compile rootProject.ext.dependencies["glide_okhttp3_integration"]
